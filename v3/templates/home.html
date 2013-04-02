@@ -1,17 +1,34 @@
 {% extends 'base.html' %}
-
-{% block title %}{{ title }}{% endblock %}
-
 {% block content %}
 
-{{ header }}
 
-{{ leader }}
+<div id="container">
 
-{{ research }}
+    <section id="header">
+        <header>
+            {{ header }}
+        </header>
+    </section>
 
-{{ people }}
+    <section id="leader">
+        {{ leader }}
+    </section>
 
-{{ footer }}
+    <section id="research">
+        {{ research }}
+    </section>
+
+    <section id="people">
+        {{ people }}
+    </section>
+
+    <section id="footer">
+        <footer>
+            {{ footer }}
+        </footer>
+    </section>
+    
+</div>
+
 
 {% endblock %}

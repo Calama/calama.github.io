@@ -1,13 +1,26 @@
 @import "normalize";
 @import "opinionated";
 
-@background: red;
+// DIMENSIONS
+@page_width: 960px;
+
+
+// TYPO
+@heading_font: 'Strait', sans-serif;
+@para_font: 'Enriqueta', georgia, serif;
+
 
 body {
-    h1 {
-        background: @background;
-    }
+    font-family: @para_font;
 }
 
-h2 {
+#container {
+    width: @page_width;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: @heading_font;
 }

@@ -33,6 +33,8 @@ Research
 
 Blah blah blah
 
+horizontal slider thing here
+
 1. Point 1
 2. Point 2
 3. etc.
