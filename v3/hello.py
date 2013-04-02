@@ -7,11 +7,18 @@ content = {}
 
 title = "Calama Consulting"
 
+
 content['header'] = """
 Calama Consulting
 =================
 
 _Never Stop Innovating!_
+"""
+
+content['nav'] = """
+
+* [Calama](#calama "Calama Consulting -- Go to top of page")
+
 """
 
 
@@ -35,9 +42,9 @@ Blah blah blah
 
 horizontal (3-panel?) slider thing here
 
-1. Point 1
-2. Point 2
-3. etc.
+1.  Point 1
+2.  Point 2
+3.  etc.
 """
 
 content['people'] = """

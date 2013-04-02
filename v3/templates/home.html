@@ -2,33 +2,33 @@
 {% block content %}
 
 
-<div id="container">
+<section id="header">
+    <header>
+        {{ header }}
+    </header>
+</section>
 
-    <section id="header">
-        <header>
-            {{ header }}
-        </header>
-    </section>
+<section id="nav">
+    {{ nav }}
+</section>
 
-    <section id="leader">
-        {{ leader }}
-    </section>
+<section id="leader">
+    {{ leader }}
+</section>
 
-    <section id="research">
-        {{ research }}
-    </section>
+<section id="research">
+    {{ research }}
+</section>
 
-    <section id="people">
-        {{ people }}
-    </section>
+<section id="people">
+    {{ people }}
+</section>
 
-    <section id="footer">
-        <footer>
-            {{ footer }}
-        </footer>
-    </section>
-    
-</div>
+<section id="footer">
+    <footer>
+        {{ footer }}
+    </footer>
+</section>
 
 
 {% endblock %}

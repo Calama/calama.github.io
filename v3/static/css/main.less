@@ -3,7 +3,8 @@
 @import "mixins";
 
 // DIMENSIONS
-@page_width: 960px;
+@content_width: 960px;
+@gutter
 
 
 // TYPO
@@ -12,11 +13,6 @@
 
 body {
     font-family: @para_font;
-}
-
-#container {
-    width: @page_width;
-    margin: 0 auto;
 }
 
 h1,
@@ -43,5 +39,8 @@ section {
         padding-right: 1rem;
         float: left;
         box-sizing: border-box;
+
+        &:first-child {
+
     }
 }
