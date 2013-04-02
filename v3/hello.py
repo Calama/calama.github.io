@@ -33,7 +33,7 @@ Research
 
 Blah blah blah
 
-horizontal slider thing here
+horizontal (3-panel?) slider thing here
 
 1. Point 1
 2. Point 2
@@ -43,6 +43,8 @@ horizontal slider thing here
 content['people'] = """
 People
 ------
+
+two panels here
 
 *   ### Rob Andrews
 
