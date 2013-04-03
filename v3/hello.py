@@ -103,7 +103,10 @@ People
 
 *   ### Philip Schleihauf
 
-    Philip Schleihauf blah blah blah
+    Philip Schleihauf builds websites, administers servers and databases,
+    designs graphics, rides unicycles, and sometimes sleeps. He joined Calama
+    in 2013 to develop and launch [Frames](#products
+    "Frames is an exciting new product being developed at Calama Consulting").
 
 """
 

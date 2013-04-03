@@ -71,6 +71,7 @@ section {
         width: 900%;
         margin-left: -400%;
         // outline: 1px dotted rgba(0, 0, 0, 0.2);
+        z-index: -1;
     }
     &:after {
         position: absolute;
@@ -79,6 +80,9 @@ section {
         left: @content_padding;
         right: @content_padding;
         border-bottom: 2px dashed @line_colour;
+    }
+    &:last-child:after {
+        border-width: 0;
     }
 }
 
@@ -106,7 +110,8 @@ section {
     }
 
     li {
-        width: 50%;
+        min-height: 18rem;
+        width: 49%;
         padding: 1rem;
         // padding-right: 1rem
         float: left;
@@ -116,8 +121,19 @@ section {
         // border: 2px solid rgba(0, 0, 0, 0.2);
         background: rgba(0, 0, 0, 0.2) 0 100% no-repeat;
 
+        p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
         &:first-child {
             background-image: url('../img/rob.png');
+            margin-right: 2%;
+
+            p {
+                margin-left: 88px;
+                padding-bottom: 2rem;
+            }
         }
 
         h3 {
