@@ -7,7 +7,7 @@
 body {
     font-family: @para_font;
     overflow-x: hidden;
-    background: @theme_colour;
+    background: @theme_colour url('../img/panels2.png') 50% top no-repeat;
 }
 
 h1,
@@ -25,14 +25,26 @@ a {
     }
 }
 
+header {
+    position: relative;
+}
+
 header h1 {
-    padding-top: 164px;
-    background: @svg_logo 50% 0 no-repeat;
+    padding: 2rem 0 0 164px;
+    height: 144px;
+    background: @svg_logo 0 0 no-repeat;
+    color: #fff;
 }
 
 header h1,
 header p {
-    text-align: center;
+    // text-align: center;
+}
+
+header p {
+    position: absolute;
+    top: 4rem;
+    left: 164px;
 }
 
 h2 {
@@ -70,6 +82,15 @@ section {
     &:last-child:after {
         border-width: 0;
     }
+}
+
+
+#calama {
+    padding-top: 0;
+}
+
+#who-we-are {
+    margin-top: 17rem;
 }
 
 
@@ -159,8 +180,9 @@ section {
         position: relative;
         width: 32%;
         height: @research_box_height;
+        overflow: hidden;
         margin-bottom: 1rem;
-        padding: @research_box_padding;
+        // padding: @research_box_padding;
         float: left;
         .box-sizing();
         border-radius: 0.5em;
@@ -186,18 +208,17 @@ section {
         }
 
         &:hover {
-            background: @accent;
-            &:before {
-                opacity: 0.333;
-            }
+            // background: @medium_dark;
             .research-description {
                 opacity: 1;
+                top: 0;
             }
         }
         
         h3 {
             margin: 0;
             position: absolute;
+            z-index: 10;
             bottom: 3rem;
             left: @research_box_padding;
             right: @research_box_padding;
@@ -207,9 +228,13 @@ section {
         .research-description {
             font-size: 0.9em;
             position: absolute;
-            top: @research_box_padding;
+            padding: 0 1em;
+            height: 100%;
+            // top: @research_box_padding;
+            top: (-@research_box_height);
             color: @dark_colour;
             opacity: 0;
+            background: @accent;
             .trans();
         }
 
@@ -230,7 +255,9 @@ section {
             padding-right: 1em;
 
             &:before {
-                content: "Published ";
+                @media screen and (min-width: 1000px) {
+                    content: "Published ";
+                }
             }
         }
         .research-meta a {

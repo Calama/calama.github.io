@@ -6,7 +6,9 @@
     <header>
         {{ calama }}
     </header>
-    {{ who_we_are }}
+    <div id="who-we-are">
+        {{ who_we_are }}
+    </div>
 </section>
 
 <section id="products">
@@ -39,7 +41,9 @@
         {% for res in researches %}
             <li class="research" id="{{ res.id }}" data-bg="{{ res.background() }}">
                 <h3>{{ res.title }}</h3>
-                <p class="research-description">{{ res.description }}</p>
+                <div class="research-description">
+                    <p>{{ res.description }}</p>
+                </div>
                 <p class="research-meta">
                     <time datetime="{{ res.date.isoformat() }}" title="{{ res.date.isoformat() }}">{{ res.date }}</time>
                     <a href="{{ res.download() }}">Download PDF <span class="icon-cloud-download"></span></a>
