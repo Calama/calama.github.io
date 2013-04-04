@@ -44,8 +44,6 @@ government subsidies, there can be no status-quo.
 Calama Consulting is a solar systems consulting firm committed to continual
 innovation, and specializes in developing customized solutions for its clients.
 
-photo of sunset over pv
-
 """
 
 
@@ -144,7 +142,7 @@ People
 *   ### Philip Schleihauf
 
     Philip Schleihauf builds websites, administers servers and databases,
-    designs graphics, rides unicycles, and sometimes sleeps. He joined Calama
+    designs graphics, rides unicycles, and sometimes sleeps. Phil joined Calama
     in 2013 to develop and launch [Frames](#frames
     "Frames is an exciting new product being developed at Calama Consulting").
 

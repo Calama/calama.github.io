@@ -12,11 +12,18 @@
 <section id="products">
     <div class="meta">
         {{ products }}
+        <div id="product-nav">
+            <ul>
+                {% for box in boxes %}
+                    <li><a href="#{{ box.id }}" {% if loop.first %}class="selected"{% endif %}>{{ box.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     <div class="substance">
         <ul>
             {% for box in boxes %}
-                <li id="{{ box.id }}" data-bg="{{ box.background() }}">
+                <li id="{{ box.id }}" {% if loop.first %}class="selected"{% endif %} data-bg="{{ box.background() }}">
                     <h3>{{ box.name }}</h3>
                     <p>{{ box.description }}</p>
                 </li>

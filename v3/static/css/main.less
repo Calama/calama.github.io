@@ -42,6 +42,7 @@ h2 {
 section {
     display: block;
     position: relative;
+    min-width: @content_min_width;
     max-width: @content_width;
     margin: 0 auto;
     padding: @content_padding;
@@ -73,17 +74,76 @@ section {
 
 
 #products {
-    div {
-        // outline: 1px dotted rgba(0, 0, 0, 0.2);
+    // div {
+    //     outline: 1px dotted rgba(0, 0, 0, 0.2);
+    // }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    ul,
+    ul > li {
+        list-style: none;
+        .georeset();
     }
     .meta {
         width: 24%;
         margin-right: 2%;
-        float:left;
+        float: left;
+
+        p {
+            margin-bottom: 2em;
+        }
+
+        a {
+            .button();
+            display: block;
+            .box-sizing();
+            margin: 0.5em 0;
+            width: 100%;
+
+            &:hover {
+                background: @medium_light;
+            }
+            &:not(:hover) {
+                background: none;
+            }
+            &.selected {
+                background: @accent;
+            }
+        }
     }
     .substance {
+        position: relative;
+        overflow: hidden;
         width: 74%;
+        height: 16rem;
         margin-left: 26%;
+
+        li {
+            display: block;
+            .box-sizing();
+            position: absolute;
+            top: 0;
+            left: 0;
+            left: -100%;
+            height: 100%;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.5em;
+            background: @medium_dark;
+            .transition(left 0.4s ease);
+
+            // &.target,
+            &.selected {
+                left: 0;
+            }
+
+            h3 {
+                color: @accent;
+            }
+        }
     }
 }
 
