@@ -1,3 +1,6 @@
+#!/usr/bin/python
+
+
 from flask import Flask, url_for, Markup, render_template
 from markdown import markdown
 content = {}
