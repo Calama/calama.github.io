@@ -9,13 +9,6 @@
     {{ who_we_are }}
 </section>
 
-<!-- <nav id="nav">
-    {{ nav }}
-</nav> -->
-<!-- 
-<section id="who-we-are">
-</section> -->
-
 <section id="products">
     <div class="meta">
         {{ products }}
@@ -41,7 +34,7 @@
                 <h3>{{ res.title }}</h3>
                 <p class="research-description">{{ res.description }}</p>
                 <p class="research-meta">
-                    <time datetime="{{ res.date.isoformat() }}" title="{{ res.date.isoformat() }}">Published {{ res.date }}</time>
+                    <time datetime="{{ res.date.isoformat() }}" title="{{ res.date.isoformat() }}">{{ res.date }}</time>
                     <a href="{{ res.download() }}">Download PDF <span class="icon-cloud-download"></span></a>
                 </p>
             </li>
@@ -49,7 +42,7 @@
     </ul>
     <div class="clearfix"></div>
     <div id="more-research">
-        <a href="#research">More research...</a>
+        <a href="#research">research</a>
     </div>
     <div class="clearfix"></div>
 </section>

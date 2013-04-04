@@ -17,7 +17,7 @@ h3 {
 }
 
 a {
-    color: @light_colour;
+    color: @accent;
     font-weight: bold;
     text-decoration: none;
     &:hover {
@@ -126,7 +126,7 @@ section {
         }
 
         &:hover {
-            background: @medium_dark;
+            background: @accent;
             &:before {
                 opacity: 0.333;
             }
@@ -139,40 +139,46 @@ section {
             margin: 0;
             position: absolute;
             bottom: 3rem;
+            left: @research_box_padding;
+            right: @research_box_padding;
             text-align: center;
         }
 
         .research-description {
+            font-size: 0.9em;
             position: absolute;
             top: @research_box_padding;
-            color: @light_colour;
+            color: @dark_colour;
             opacity: 0;
             .trans();
         }
 
         .research-meta {
             position: absolute;
-            bottom: @research_box_padding;
+            bottom: 0;
             left: @research_box_padding;
             right: @research_box_padding;
         }
 
         .research-meta time,
         .research-meta a {
-            position: absolute;
             font-size: 0.9em;
             color: @dark_colour;
         }
         .research-meta time {
-            left: 0;
             font-style: italic;
             padding-right: 1em;
+
+            &:before {
+                content: "Published ";
+            }
         }
         .research-meta a {
+            position: absolute;
             right: 0;
             padding-left: 1em;
             &:hover {
-                color: @light_colour;
+                // color: @accent;
             }
         }
     }
@@ -180,8 +186,9 @@ section {
 
 .js #research {
     ul {
-        height: @research_box_height + 1rem;
+        max-height: (@research_box_height + 0.5rem);
         overflow: hidden;
+        .transition(max-height 0.5s ease);
     }
     #more-research {
         float: right;
@@ -189,6 +196,18 @@ section {
 
         a {
             .button();
+
+            &:before {
+                content: "Show more ";
+            }
+        }
+    }
+    &.show-all {
+        ul {
+            max-height: ((@research_box_height + 1rem) * 2);
+        }
+        #more-research a:before {
+            content: "Show less ";
         }
     }
 }

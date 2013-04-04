@@ -26,17 +26,6 @@ logo = """
 title = "Calama Consulting"
 
 
-content['nav'] = """
-
-* [Calama](#calama "Calama consulting -- go to top of page")
-* [Products](#products "Stuff we make")
-* [Research](#research "Summary of academic research")
-* [People](#people "The team")
-* [Contact](#footer "Get in touch")
-
-"""
-
-
 content['calama'] = """
 Calama Consulting
 =================
@@ -102,7 +91,7 @@ researches = (
         title='A brilliant piece of research pertaining to Photovoltaics',
         date=date(2012, 1, 1),
         id='photovoltaics-research',
-        description='blah blah blah blah blah blah blah blah blah blah',
+        description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor.',
         background=box_bg('photovoltaics.png'),
         download=dl('blah1.pdf'),
     ),
@@ -110,7 +99,7 @@ researches = (
         title='Advanced analysis of unobtainable theories yeilding knowledge',
         date=date(2012, 1, 2),
         id='yield-analysis',
-        description='blah blah blah blah blah blah blah blah blah blah',
+        description='Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies.',
         background=box_bg('yeild.png'),
         download=dl('blah2.pdf'),
     ),
@@ -118,7 +107,7 @@ researches = (
         title='Systematic synergistically salvageable slippery sloughs',
         date=date(2012, 1, 3),
         id='esses',
-        description='blah blah blah blah blah blah blah blah blah blah',
+        description='Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies.',
         background=box_bg('sss.png'),
         download=dl('blah3.pdf'),
     ),
