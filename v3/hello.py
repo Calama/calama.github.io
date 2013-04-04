@@ -1,13 +1,15 @@
 #!/usr/bin/python
 
 
+from datetime import date
 from flask import Flask, url_for, Markup, render_template
 from markdown import markdown
 content = {}
 
 
 app = Flask(__name__)
-box_bg = lambda filename: lambda: url_for('static', ('img/' + filename))
+box_bg = lambda filename: lambda: url_for('static', filename=('img/box/' + filename))
+dl = lambda filename: lambda: url_for('static', filename=('doc/' + filename))
 
 
 logo = """
@@ -93,22 +95,51 @@ content['research'] = """
 Research
 --------
 
-1.  ### A brilliant piece of research pertaining to Photovoltaics
-
-    _2011-08-21_
-
-2.  ### Advanced analysis of unobtainable theories yeilding knowledge
-
-    _2012-93-49_
-
-3.  ### Systematic synergistically salvageable slippery sloughs.
-
-    _2014-11-11_
-
-
-[More research...](#)
-
 """
+
+researches = (
+    dict(
+        title='A brilliant piece of research pertaining to Photovoltaics',
+        date=date(2012, 1, 1),
+        id='photovoltaics-research',
+        description='blah blah blah blah blah blah blah blah blah blah',
+        background=box_bg('photovoltaics.png'),
+        download=dl('blah1.pdf'),
+    ),
+    dict(
+        title='Advanced analysis of unobtainable theories yeilding knowledge',
+        date=date(2012, 1, 2),
+        id='yield-analysis',
+        description='blah blah blah blah blah blah blah blah blah blah',
+        background=box_bg('yeild.png'),
+        download=dl('blah2.pdf'),
+    ),
+    dict(
+        title='Systematic synergistically salvageable slippery sloughs',
+        date=date(2012, 1, 3),
+        id='esses',
+        description='blah blah blah blah blah blah blah blah blah blah',
+        background=box_bg('sss.png'),
+        download=dl('blah3.pdf'),
+    ),
+    dict(
+        title='Advanced analysis of unobtainable theories yeilding knowledge 2',
+        date=date(2012, 1, 4),
+        id='yield-analysis-2',
+        description='blah blah blah blah blah blah blah blah blah blah',
+        background=box_bg('yeild.png'),
+        download=dl('blah4.pdf'),
+    ),
+    dict(
+        title='Advanced analysis of unobtainable theories yeilding knowledge 3',
+        date=date(2012, 1, 5),
+        id='yield-analysis-3',
+        description='blah blah blah blah blah blah blah blah blah blah',
+        background=box_bg('yeild.png'),
+        download=dl('blah5.pdf'),
+    ),
+)
+
 
 content['people'] = """
 People
@@ -147,7 +178,8 @@ content = dict((n, Markup(markdown(c))) for n, c in content.items())
 
 @app.route('/')
 def home():
-    return render_template('home.html', title=title, boxes=boxes, **content)
+    return render_template('home.html', title=title, boxes=boxes,
+                           researches=researches, **content)
 
 if __name__ == '__main__':
     app.run(debug=True)

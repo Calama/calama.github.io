@@ -23,7 +23,7 @@
     <div class="substance">
         <ul>
             {% for box in boxes %}
-                <li id="{{ box.id }}" data-bg="{{ box.background }}">
+                <li id="{{ box.id }}" data-bg="{{ box.background() }}">
                     <h3>{{ box.name }}</h3>
                     <p>{{ box.description }}</p>
                 </li>
@@ -35,6 +35,23 @@
 
 <section id="research">
     {{ research }}
+    <ul id="researches">
+        {% for res in researches %}
+            <li class="research" id="{{ res.id }}" data-bg="{{ res.background() }}">
+                <h3>{{ res.title }}</h3>
+                <p class="research-description">{{ res.description }}</p>
+                <p class="research-meta">
+                    <time datetime="{{ res.date.isoformat() }}" title="{{ res.date.isoformat() }}">Published {{ res.date }}</time>
+                    <a href="{{ res.download() }}">Download PDF <span class="icon-cloud-download"></span></a>
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="clearfix"></div>
+    <div id="more-research">
+        <a href="#research">More research...</a>
+    </div>
+    <div class="clearfix"></div>
 </section>
 
 <section id="people">
