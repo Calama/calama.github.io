@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<section id="calama">
+    <header>
+        {{ calama }}
+    </header>
+    <div id="who-we-are">
+        {{ who_we_are }}
+    </div>
+</section>
+
+<section id="products">
+    <div class="meta">
+        {{ products }}
+        <div id="product-nav">
+            <ul>
+                {% for box in boxes %}
+                    <li><a href="#{{ box.id }}" {% if loop.first %}class="selected"{% endif %}>{{ box.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="substance">
+        <ul>
+            {% for box in boxes %}
+                <li id="{{ box.id }}" {% if loop.first %}class="selected"{% endif %} data-bg="{{ box.background() }}">
+                    <h3>{{ box.name }}</h3>
+                    <p>{{ box.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+</section>
+
+<section id="research">
+    {{ research }}
+    <ul id="researches">
+        {% for res in researches %}
+            <li class="research" id="{{ res.id }}" data-bg="{{ res.background() }}">
+                <h3>{{ res.title }}</h3>
+                <div class="research-description">
+                    <p>{{ res.description }}</p>
+                </div>
+                <p class="research-meta">
+                    <time datetime="{{ res.date.isoformat() }}" title="{{ res.date.isoformat() }}">{{ res.date }}</time>
+                    <a href="{{ res.download() }}">Download PDF <span class="icon-cloud-download"></span></a>
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="clearfix"></div>
+    <div id="more-research">
+        <a href="#research">research</a>
+    </div>
+    <div class="clearfix"></div>
+</section>
+
+<section id="people">
+    {{ people }}
+    <div class="clearfix"></div>
+</section>
+
+<section id="footer">
+    <footer>
+        {{ footer }}
+    </footer>
+</section>
+
+
+{% endblock %}
