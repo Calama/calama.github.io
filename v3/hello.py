@@ -1,6 +1,11 @@
-from flask import Flask, Markup, render_template
+from flask import Flask, url_for, Markup, render_template
 from markdown import markdown
 content = {}
+
+
+app = Flask(__name__)
+box_bg = lambda filename: lambda: url_for('static', ('img/' + filename))
+
 
 logo = """
 <svg width="144" height="144">
@@ -54,19 +59,31 @@ content['products'] = """
 Products
 --------
 
-1.  ### Frames
+Some quick blurb here about products. blah blah blah
 
-    This is a product
-
-2.  ### Helicopters
-
-    This is another product
-
-3.  ### Solar Concentrator
-
-    Guess what? This is a product too!
 
 """
+
+boxes = (
+    dict(
+        name='Frames',
+        id='frames',
+        description='Frames is a cool program!',
+        background=box_bg('frames.png'),
+    ),
+    dict(
+        name='Helicopters',
+        id='helicopters',
+        description='Fly around and shit',
+        background=box_bg('helicopters.png'),
+    ),
+    dict(
+        name='Solar Concentrator',
+        id='concentrator',
+        description='Sunlight yeah yeah yeah',
+        background=box_bg('concentrator.png'),
+    ),
+)
 
 
 content['research'] = """
@@ -105,7 +122,7 @@ People
 
     Philip Schleihauf builds websites, administers servers and databases,
     designs graphics, rides unicycles, and sometimes sleeps. He joined Calama
-    in 2013 to develop and launch [Frames](#products
+    in 2013 to develop and launch [Frames](#frames
     "Frames is an exciting new product being developed at Calama Consulting").
 
 """
@@ -122,13 +139,12 @@ Contact
 # END SITE CONTENT # END SITE CONTENT # END SITE CONTENT #
 
 
-app = Flask(__name__)
 content = dict((n, Markup(markdown(c))) for n, c in content.items())
 
 
 @app.route('/')
 def home():
-    return render_template('home.html', title=title, **content)
+    return render_template('home.html', title=title, boxes=boxes, **content)
 
 if __name__ == '__main__':
     app.run(debug=True)

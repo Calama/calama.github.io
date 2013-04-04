@@ -79,10 +79,26 @@ section {
         bottom: 0;
         left: @content_padding;
         right: @content_padding;
-        border-bottom: 2px dashed @line_colour;
+        // border-bottom: 2px dashed @line_colour;
     }
     &:last-child:after {
         border-width: 0;
+    }
+}
+
+
+#products {
+    div {
+        outline: 1px dotted rgba(0, 0, 0, 0.2);
+    }
+    .meta {
+        width: 24%;
+        margin-right: 2%;
+        float:left;
+    }
+    .substance {
+        width: 74%;
+        margin-left: 26%;
     }
 }
 
@@ -95,9 +111,13 @@ section {
     }
 
     ol > li {
-        width: 33%;
+        width: 32%;
         float: left;
         .box-sizing();
+        outline: 1px dotted rgba(0, 0, 0, 0.2);
+        &:nth-child(2) {
+            margin: 0 2%;
+        }
     }
 }
 
@@ -110,7 +130,7 @@ section {
     }
 
     li {
-        min-height: 18rem;
+        min-height: 19rem;
         width: 49%;
         padding: 1rem;
         // padding-right: 1rem
@@ -131,8 +151,16 @@ section {
             margin-right: 2%;
 
             p {
-                margin-left: 88px;
+                margin: 0 1rem 0 88px;
                 padding-bottom: 2rem;
+            }
+        }
+
+        &:last-child {
+            background-image: url('../img/phil.png');
+            background-position: 100% 100%;
+            p {
+                margin: 0 120px 0 1rem;
             }
         }
 

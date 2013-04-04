@@ -6,18 +6,31 @@
     <header>
         {{ calama }}
     </header>
+    {{ who_we_are }}
 </section>
 
 <!-- <nav id="nav">
     {{ nav }}
 </nav> -->
-
+<!-- 
 <section id="who-we-are">
-    {{ who_we_are }}
-</section>
+</section> -->
 
 <section id="products">
-    {{ products }}
+    <div class="meta">
+        {{ products }}
+    </div>
+    <div class="substance">
+        <ul>
+            {% for box in boxes %}
+                <li id="{{ box.id }}" data-bg="{{ box.background }}">
+                    <h3>{{ box.name }}</h3>
+                    <p>{{ box.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="clearfix"></div>
 </section>
 
 <section id="research">
