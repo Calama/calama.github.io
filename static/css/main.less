@@ -1,8 +1,8 @@
-@import "icons";
 @import "variables";
 @import "normalize";
 @import "opinionated";
 @import "mixins";
+@import "icons";
 
 body {
     font-family: @para_font;
@@ -30,10 +30,19 @@ header {
 }
 
 header h1 {
+    position: relative;
     padding: 2rem 0 0 164px;
     height: 144px;
-    background: @svg_logo 0 0 no-repeat;
     color: #fff;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        .icoreset;
+        content: "*";
+        font-size: 144px;
+    }
 }
 
 header h1,
@@ -51,7 +60,8 @@ h2 {
     color: white;
 }
 
-section {
+section,
+footer {
     display: block;
     position: relative;
     min-width: @content_min_width;
@@ -199,11 +209,12 @@ section {
 
         &:before {
             display: block;
-            font-family: 'calamasite';
+            font-family: @icon_font;
             color: @medium_dark;
             font-size: 5rem;
             text-align: center;
-            content: "\e001";
+            content: "f";
+            padding-top: 1rem;
             .trans();
         }
 
@@ -219,7 +230,7 @@ section {
             margin: 0;
             position: absolute;
             z-index: 10;
-            bottom: 3rem;
+            bottom: 2.5rem;
             left: @research_box_padding;
             right: @research_box_padding;
             text-align: center;
@@ -240,7 +251,8 @@ section {
 
         .research-meta {
             position: absolute;
-            bottom: 0;
+            bottom: 0.5em;
+            margin: 0;
             left: @research_box_padding;
             right: @research_box_padding;
         }
@@ -251,8 +263,8 @@ section {
             color: @dark_colour;
         }
         .research-meta time {
+            float: left;
             font-style: italic;
-            padding-right: 1em;
 
             &:before {
                 @media screen and (min-width: 1000px) {
@@ -261,9 +273,7 @@ section {
             }
         }
         .research-meta a {
-            position: absolute;
-            right: 0;
-            padding-left: 1em;
+            float:right;
             &:hover {
                 // color: @accent;
             }
@@ -350,5 +360,81 @@ section {
             text-align: center;
         }
 
+    }
+}
+
+
+#footer {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 5rem;
+    padding: 0.333rem 0 0.15rem;
+    background: @dark_colour;
+    color: @light_colour;
+
+    footer {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    ul {
+        margin: 0;
+        list-style: none;
+    }
+
+    h2,
+    ul > li {
+        .georeset;
+        list-style: none;
+        display: block;
+        float: left;
+        width: 24%;
+    }
+
+    h2 {
+        width: 14%;
+    }
+    ul > li:first-child {
+        margin: 0 2%;
+        width: 34%;
+    }
+    ul > li:last-child {
+        margin: 0 0 0 2%;
+    }
+
+    ul > li {
+        font-size: 0.9em;
+        position: relative;
+        // text-align: center;
+        .box-sizing();
+        padding-left: 2.5em;
+        float: left;
+
+        &:before {
+            .icoreset;
+            content: attr(data-icon);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            vertical-align: baseline;
+            color: @medium_light;
+            font-size: 1.667em;
+        }
+
+        a {
+            display: inline-block;
+            padding: 0.5em 0;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1em;
+        }
+
+        address {
+            margin: 0;
+            font-style: normal;
+            line-height: 1em;            
+        }
     }
 }

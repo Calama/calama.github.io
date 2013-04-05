@@ -39,14 +39,14 @@
     {{ research }}
     <ul id="researches">
         {% for res in researches %}
-            <li class="research" id="{{ res.id }}" data-bg="{{ res.background() }}">
+            <li class="research box" id="{{ res.id }}" data-bg="{{ res.background() }}">
                 <h3>{{ res.title }}</h3>
                 <div class="research-description">
                     <p>{{ res.description }}</p>
                 </div>
                 <p class="research-meta">
                     <time datetime="{{ res.date.isoformat() }}" title="{{ res.date.isoformat() }}">{{ res.date }}</time>
-                    <a href="{{ res.download() }}">Download PDF <span class="icon-cloud-download"></span></a>
+                    <a href="{{ res.download() }}">Download PDF <span class="icon-download"></span></a>
                 </p>
             </li>
         {% endfor %}
@@ -66,6 +66,14 @@
 <section id="footer">
     <footer>
         {{ footer }}
+        <ul id="contact">
+            {% for method in contact %}
+                <li id="{{ method.id }}" data-icon="{{ method.icon }}">
+                    {{ method.display }}
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="clearfix"></div>
     </footer>
 </section>
 
