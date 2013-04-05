@@ -154,9 +154,21 @@ content['footer'] = """
 Contact
 -------
 
-`hello`
+<address>
 
+**Calama Consulting**  
+(613) 555 - 3.14  
+_postal address_  
+[email](mailto:email@example.com, "Send us an email!")
+
+</address>
 """
+# NOTE: the double-spaces at the end of the lines ^^ force a line-break.
+
+
+contact = dict(
+    destination="roba77@gmail.com",
+)
 
 # END SITE CONTENT # END SITE CONTENT # END SITE CONTENT #
 
@@ -167,7 +179,7 @@ content = dict((n, Markup(markdown(c))) for n, c in content.items())
 @app.route('/')
 def home():
     return render_template('home.html', title=title, boxes=boxes,
-                           researches=researches, **content)
+                           researches=researches, contact=contact, **content)
 
 if __name__ == '__main__':
     app.run(debug=True)
