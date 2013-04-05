@@ -67,7 +67,7 @@ boxes = (
     dict(
         name='Helicopters',
         id='helicopters',
-        description='Fly around and shit',
+        description='Fly around and bubblegum and rainbows',
         background=box_bg('helicopters.png'),
     ),
     dict(
