@@ -79,7 +79,7 @@ header{position:relative;}
 header h1{padding:2rem 0 0 164px;height:144px;background:url('../img/logo.svg') 0 0 no-repeat;color:#fff;}
 header p{position:absolute;top:4rem;left:164px;}
 h2{color:white;}
-section{display:block;position:relative;min-width:768px;max-width:960px;margin:0 auto;padding:2rem;clear:both;}section:before{position:absolute;top:0;left:0;display:block;content:"";height:100%;width:900%;margin-left:-400%;z-index:-1;}
+section{display:block;position:relative;min-width:768px;max-width:1200px;margin:0 auto;padding:2rem;clear:both;}section:before{position:absolute;top:0;left:0;display:block;content:"";height:100%;width:900%;margin-left:-400%;z-index:-1;}
 section:after{position:absolute;content:"";bottom:0;left:2rem;right:2rem;}
 section:last-child:after{border-width:0;}
 #calama{padding-top:1rem;}
