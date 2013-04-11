@@ -91,38 +91,30 @@ researches = (
     dict(
         title='Improved parametric empirical determination of module short circuit current for modelling and optimization of solar photovoltaic systems',
         authors='R. W. Andrews, A. Pollard, and J. M. Pearce' ,
-        Journal='Solar Energy',
+        journal='Solar Energy',
         date=date(2012, 10, 1),
-        id='photovoltaics-research',
-        description=' ',
-        background=box_bg('photovoltaics.png'),
+        id='short-circuit-current',
         download=dl('I_sc_Prediction_arxiv.pdf'),
     ),
     dict(
         title='The effects of snowfall on solar photovoltaic performance',
-        authos='R. W. Andrews, A. Pollard, and J. M. Pearce',
+        authors='R. W. Andrews, A. Pollard, and J. M. Pearce',
         date=date(2013, 2, 1),
         id='snowfall',
-        description=' ',
-        background=box_bg('yeild.png'),
         download=dl('Snow_Paper_Submission_open_access.pdf'),
     ),
     dict(
         title='Prediction of energy effects on photovoltaic systems due to snowfall events',
-        authos='R. W. Andrews and J. M. Pearce',
+        authors='R. W. Andrews and J. M. Pearce',
         date=date(2012, 7, 1),
-        id='esses',
-        description=' ',
-        background=box_bg('sss.png'),
-        download=dl('blah3.pdf'),
+        id='snowfall-prediction',
+        download=None,
     ),
     dict(
         title='The effect of spectral albedo on amorphous silicon and crystalline silicon solar photovoltaic device performance',
         authors='R. W. Andrews and J. M. Pearce',
         date=date(2013, 3, 1),
-        id='Spec_albedo',
-        description=' ',
-        background=box_bg('yeild.png'),
+        id='spec-albedo',
         download=dl('Snow_albedo_open_access.pdf'),
     ),
     dict(
@@ -130,27 +122,21 @@ researches = (
         authors='R. W. Andrews, A. Pollard, and J. M. Pearce',
         date=date(2013, 6, 1),
         id='hydrodynamic',
-        description=' hello things',
-        background=box_bg('yeild.png'),
-        download=dl('blah5.pdf'),
+        download=None,
     ),
     dict(
         title='Model of Loss Mechanisms for Low Optical Concentration on Solar Photovoltaic Arrays with Planar Reflectors',
         authors='R. W. Andrews, N. Alazzam, and J. M. Pearce',
         date=date(2011, 6, 1),
-        id='Loss Mechanisms',
-        description=' ',
-        background=box_bg('yeild.png'),
-        download=dl('blah5.pdf'),
+        id='loss-mechanisms',
+        download=None,
     ),
     dict(
         title='Environmental and economic assessment of a greenhouse waste heat exchange',
         authors='R. W. Andrews, and J. M. Pearce',
         date=date(2011, 9, 1),
-        id='Loss Mechanisms',
-        description=' ',
-        background=box_bg('yeild.png'),
-        download=dl('blah5.pdf'),
+        id='waste-heat-exchange-assessment',
+        download=None,
     ),
 )
 
@@ -184,10 +170,7 @@ Contact
 
 contact = (
     dict(
-        display=Markup("""<address>
-                            <br/>
-                            Toronto ON, Canada
-                        </address>"""),
+        display=Markup("""<address>Toronto ON, Canada</address>"""),
         id='address',
         icon='c',
     ),

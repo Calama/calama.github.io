@@ -39,14 +39,17 @@
     {{ research }}
     <ul id="researches">
         {% for res in researches %}
-            <li class="research box" id="{{ res.id }}" data-bg="{{ res.background() }}">
+            <li class="research box" id="{{ res.id }}">
                 <h3>{{ res.title }}</h3>
                 <div class="research-description">
-                    <p>{{ res.description }}</p>
+                    {% if res.journal %}<p><strong>{{ res.journal }}</strong></p>{% endif %}
+                    <p>{{ res.authors }}</p>
                 </div>
                 <p class="research-meta">
                     <time datetime="{{ res.date.isoformat() }}" title="{{ res.date.isoformat() }}">{{ res.date }}</time>
-                    <a href="{{ res.download() }}">Download PDF <span class="icon-download"></span></a>
+                    {% if res.download %}
+                        <a href="{{ res.download() }}">Download PDF <span class="icon-download"></span></a>
+                    {% endif %}
                 </p>
             </li>
         {% endfor %}

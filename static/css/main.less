@@ -113,8 +113,10 @@ footer {
         margin-top: 0;
     }
 
-    ul,
-    ul > li {
+    .substance > ul,
+    .meta ul,
+    .substance > ul > li,
+    .meta ul > li {
         list-style: none;
         .georeset();
     }
@@ -147,12 +149,12 @@ footer {
     }
     .substance {
         position: relative;
-        overflow: hidden;
+        overflow-x: hidden;
         width: 74%;
-        height: 16rem;
+        height: 19rem;
         margin-left: 26%;
 
-        li {
+        &> ul > li {
             display: block;
             .box-sizing();
             position: absolute;
@@ -239,8 +241,9 @@ footer {
         .research-description {
             font-size: 0.9em;
             position: absolute;
-            padding: 0 1em;
+            padding: 1em 1em;
             height: 100%;
+            width: 100%;
             // top: @research_box_padding;
             top: (-@research_box_height);
             color: @dark_colour;
@@ -287,6 +290,9 @@ footer {
         overflow: hidden;
         .transition(max-height 0.5s ease);
     }
+    h3 {
+        line-height: 1.1em;
+    }
     #more-research {
         float: right;
         margin-top: 1rem;
@@ -301,7 +307,7 @@ footer {
     }
     &.show-all {
         ul {
-            max-height: ((@research_box_height + 1rem) * 2);
+            max-height: ((@research_box_height + 1rem) * 3);
         }
         #more-research a:before {
             content: "Show less ";
@@ -395,7 +401,7 @@ footer {
         width: 14%;
     }
     ul > li:first-child {
-        margin: 0 2%;
+        margin: 0 0 0 2%;
         width: 34%;
     }
     ul > li:last-child {
@@ -423,18 +429,21 @@ footer {
 
         a {
             display: inline-block;
-            padding: 0.5em 0;
+            // padding: 0.5em 0;
         }
 
-        p {
+        p, address {
             margin: 0;
-            line-height: 1em;
-        }
-
-        address {
-            margin: 0;
+            padding: 0;
+            line-height: 2em;
+            height: 2em;
             font-style: normal;
-            line-height: 1em;            
         }
+
+        // address {
+        //     margin: 0;
+        //     font-style: normal;
+        //     line-height: 1em;            
+        // }
     }
 }
