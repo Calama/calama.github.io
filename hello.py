@@ -9,7 +9,7 @@ content = {}
 
 app = Flask(__name__)
 box_bg = lambda filename: lambda: url_for('static', filename=('img/box/' + filename))
-dl = lambda filename: lambda: url_for('static', filename=('doc/' + filename))
+dl = lambda filename: lambda: url_for('static', filename=('pdfs/' + filename))
 
 
 # SITE CONTENT # SITE CONTENT # SITE CONTENT # SITE CONTENT #
@@ -42,31 +42,42 @@ innovation, and specializes in developing customized solutions for its clients.
 content['products'] = """
 Products
 --------
-
-Some quick blurb here about products. blah blah blah
+Calama specializes in monitoring and maintaining PV systems. All of our services are focussed ensuring the maximum output from a PV system.
 
 
 """
 
 boxes = (
     dict(
-        name='Frames',
-        id='frames',
-        description='Frames is a cool program!',
+        name='Consulting',
+        id='consulting',
+        description=Markup(markdown('''
+Calma consulting services pring the latest knowledge from industry and academia to bear on your PV project. We focus on:
+
+ *  Resoursce evaluation campaingn design, and design and maintenance of custom data aquisition
+ *  PV resource data evaluation and selection of appropriate metrological data
+ *  PV system design and optimization
+ *  PV system evaluation and performance monitoring
+ *  Sytem troubleshooting and loss analysis
+
+        ''')),
         background=box_bg('frames.png'),
     ),
     dict(
-        name='Helicopters',
-        id='helicopters',
-        description='Fly around and bubblegum and rainbows',
-        background=box_bg('helicopters.png'),
+        name='Frames',
+        id='frames',
+        description='''The frames program centralilzes performance evaluation, maintenance control and PV portfolio management into a powerful, intuative interface
+        This program is currently under development, and we are actively seeking beta testers for this package.''',
+        background=box_bg('frames.png'),
     ),
     dict(
-        name='Solar Concentrator',
-        id='concentrator',
-        description='Sunlight yeah yeah yeah',
-        background=box_bg('concentrator.png'),
+        name='Aerial Inspection',
+        id='helicopters',
+        description='''Calama Aerial inspection services allow for efficeint identification of unerperforming panels in large scale PV arrays.
+        This innovative inspection technique is a  low cost solution for identifying underperforming PV panels in large scale PV arrays.  ''',
+        background=box_bg('helicopters.png'),
     ),
+    
 )
 
 
@@ -78,42 +89,66 @@ Research
 
 researches = (
     dict(
-        title='A brilliant piece of research pertaining to Photovoltaics',
-        date=date(2012, 1, 1),
+        title='Improved parametric empirical determination of module short circuit current for modelling and optimization of solar photovoltaic systems',
+        authors='R. W. Andrews, A. Pollard, and J. M. Pearce' ,
+        Journal='Solar Energy',
+        date=date(2012, 10, 1),
         id='photovoltaics-research',
-        description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor.',
+        description=' ',
         background=box_bg('photovoltaics.png'),
-        download=dl('blah1.pdf'),
+        download=dl('I_sc_Prediction_arxiv.pdf'),
     ),
     dict(
-        title='Advanced analysis of unobtainable theories yeilding knowledge',
-        date=date(2012, 1, 2),
-        id='yield-analysis',
-        description='Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies.',
+        title='The effects of snowfall on solar photovoltaic performance',
+        authos='R. W. Andrews, A. Pollard, and J. M. Pearce',
+        date=date(2013, 2, 1),
+        id='snowfall',
+        description=' ',
         background=box_bg('yeild.png'),
-        download=dl('blah2.pdf'),
+        download=dl('Snow_Paper_Submission_open_access.pdf'),
     ),
     dict(
-        title='Systematic synergistically salvageable slippery sloughs',
-        date=date(2012, 1, 3),
+        title='Prediction of energy effects on photovoltaic systems due to snowfall events',
+        authos='R. W. Andrews and J. M. Pearce',
+        date=date(2012, 7, 1),
         id='esses',
-        description='Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies.',
+        description=' ',
         background=box_bg('sss.png'),
         download=dl('blah3.pdf'),
     ),
     dict(
-        title='Advanced analysis of unobtainable theories yeilding knowledge 2',
-        date=date(2012, 1, 4),
-        id='yield-analysis-2',
-        description='blah blah blah blah blah blah blah blah blah blah',
+        title='The effect of spectral albedo on amorphous silicon and crystalline silicon solar photovoltaic device performance',
+        authors='R. W. Andrews and J. M. Pearce',
+        date=date(2013, 3, 1),
+        id='Spec_albedo',
+        description=' ',
         background=box_bg('yeild.png'),
-        download=dl('blah4.pdf'),
+        download=dl('Snow_albedo_open_access.pdf'),
     ),
     dict(
-        title='Advanced analysis of unobtainable theories yeilding knowledge 3',
-        date=date(2012, 1, 5),
-        id='yield-analysis-3',
-        description='blah blah blah blah blah blah blah blah blah blah',
+        title='A new method to determine the effects of hydrodynamic surface coatings on the snow shedding effectiveness of solar photovoltaic modules',
+        authors='R. W. Andrews, A. Pollard, and J. M. Pearce',
+        date=date(2013, 6, 1),
+        id='hydrodynamic',
+        description=' hello things',
+        background=box_bg('yeild.png'),
+        download=dl('blah5.pdf'),
+    ),
+    dict(
+        title='Model of Loss Mechanisms for Low Optical Concentration on Solar Photovoltaic Arrays with Planar Reflectors',
+        authors='R. W. Andrews, N. Alazzam, and J. M. Pearce',
+        date=date(2011, 6, 1),
+        id='Loss Mechanisms',
+        description=' ',
+        background=box_bg('yeild.png'),
+        download=dl('blah5.pdf'),
+    ),
+    dict(
+        title='Environmental and economic assessment of a greenhouse waste heat exchange',
+        authors='R. W. Andrews, and J. M. Pearce',
+        date=date(2011, 9, 1),
+        id='Loss Mechanisms',
+        description=' ',
         background=box_bg('yeild.png'),
         download=dl('blah5.pdf'),
     ),
@@ -150,24 +185,23 @@ Contact
 contact = (
     dict(
         display=Markup("""<address>
-                            Somewhere only we know<br/>
-                            Toronto M5W 1E6, Canada
+                            <br/>
+                            Toronto ON, Canada
                         </address>"""),
         id='address',
         icon='c',
     ),
     dict(
-        display=Markup(markdown('[(613) 555-2076](tel:+1-613-555-2076)')),
+        display=Markup(markdown('[(613) 530-0323](tel:+1-613-530-0323)')),
         id='telephone',
         icon='t',
     ),
     dict(
-        display=Markup(markdown('[hello@calamaconsulting.ca](mailto:hello@calamaconsulting.ca)')),
+        display=Markup(markdown('[rob.andrews@calamaconsulting.ca](mailto:ob.andrews@calamaconsulting.ca)')),
         id='email',
         icon='@',
     ),
 )
-
 
 # END SITE CONTENT # END SITE CONTENT # END SITE CONTENT #
 
