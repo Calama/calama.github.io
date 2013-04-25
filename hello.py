@@ -198,4 +198,8 @@ def home():
                            researches=researches, contact=contact, **content)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == 'export':
+        open('index.html', 'w').write(app.test_client().get('/').data)
+    else:
+        app.run(debug=True)
