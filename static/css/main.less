@@ -4,10 +4,12 @@
 @import "mixins";
 @import "icons";
 
+@disable-filters: false;
+
 body {
     font-family: @para_font;
     overflow-x: hidden;
-    background: @theme_colour url('../img/panels2.png') 50% top no-repeat;
+    background: lighten(@theme_colour, 18%);
 }
 
 h1,
@@ -57,7 +59,7 @@ header p {
 }
 
 h2 {
-    color: white;
+    color: darken(@theme_colour, 40%);
 }
 
 section,
@@ -97,10 +99,20 @@ footer {
 
 #calama {
     padding-top: 1rem;
+    background: url('../img/panels2.png') 50% top no-repeat;
 }
 
 #who-we-are {
-    margin-top: 18rem;
+    margin: 20rem auto 0;
+    max-width: 58rem;
+    color: #fff;
+    text-align: center;
+}
+
+
+#group-1 {
+    #gradient.vertical(lighten(@theme_colour, 5%), desaturate(darken(@theme_colour, 24%), 16%));
+    border-bottom: 0.5rem solid desaturate(darken(@theme_colour, 16%), 16%);
 }
 
 
@@ -111,6 +123,7 @@ footer {
 
     h2 {
         margin-top: 0;
+        color: #fff;
     }
 
     .substance > ul,
@@ -164,6 +177,7 @@ footer {
             height: 100%;
             width: 100%;
             padding: 1rem;
+            color: #fff;
             border-radius: 0.5em;
             background: @medium_dark;
             .transition(left 0.4s ease);
@@ -337,11 +351,14 @@ footer {
 
         border-radius: 0.667rem;
         // border: 2px solid rgba(0, 0, 0, 0.2);
-        background: @medium_dark 0 100% no-repeat;
+        background: fade(desaturate(darken(@theme_colour, 8%), 0%), 50%) 0 100% no-repeat;
 
+        h3 {
+            color: rgba(255, 255, 255, 0.8);
+        }
         p {
             font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: #333;
         }
 
         &:first-child {
@@ -386,6 +403,10 @@ footer {
     ul {
         margin: 0;
         list-style: none;
+    }
+
+    h2 {
+        color: #fff;
     }
 
     h2,

@@ -2,38 +2,43 @@
 {% block content %}
 
 
-<section id="calama">
-    <header>
-        {{ calama }}
-    </header>
-    <div id="who-we-are">
-        {{ who_we_are }}
-    </div>
-</section>
+<div id="group-1">
 
-<section id="products">
-    <div class="meta">
-        {{ products }}
-        <div id="product-nav">
+    <section id="calama">
+        <header>
+            {{ calama }}
+        </header>
+        <div id="who-we-are">
+            {{ who_we_are }}
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="meta">
+            {{ products }}
+            <div id="product-nav">
+                <ul>
+                    {% for box in boxes %}
+                        <li><a href="#{{ box.id }}" {% if loop.first %}class="selected"{% endif %}>{{ box.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="substance">
             <ul>
                 {% for box in boxes %}
-                    <li><a href="#{{ box.id }}" {% if loop.first %}class="selected"{% endif %}>{{ box.name }}</a></li>
+                    <li id="{{ box.id }}" {% if loop.first %}class="selected"{% endif %} data-bg="{{ box.background() }}">
+                        <h3>{{ box.name }}</h3>
+                        <p>{{ box.description }}</p>
+                    </li>
                 {% endfor %}
             </ul>
         </div>
-    </div>
-    <div class="substance">
-        <ul>
-            {% for box in boxes %}
-                <li id="{{ box.id }}" {% if loop.first %}class="selected"{% endif %} data-bg="{{ box.background() }}">
-                    <h3>{{ box.name }}</h3>
-                    <p>{{ box.description }}</p>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+        <div class="clearfix"></div>
+    </section>
+
     <div class="clearfix"></div>
-</section>
+</div>
 
 <section id="research">
     {{ research }}

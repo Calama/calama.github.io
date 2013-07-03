@@ -776,7 +776,7 @@ textarea {
 body {
   font-family: 'Noto Sans', sans-serif;
   overflow-x: hidden;
-  background: #8cbfd9 url('../img/panels2.png') 50% top no-repeat;
+  background: #d1e5f0;
 }
 h1,
 h2,
@@ -821,7 +821,7 @@ header p {
   left: 164px;
 }
 h2 {
-  color: white;
+  color: #265973;
 }
 section,
 footer {
@@ -859,12 +859,52 @@ footer:last-child:after {
 }
 #calama {
   padding-top: 1rem;
+  background: url('../img/panels2.png') 50% top no-repeat;
 }
 #who-we-are {
-  margin-top: 18rem;
+  margin: 20rem auto 0;
+  max-width: 58rem;
+  color: #fff;
+  text-align: center;
+}
+#group-1 {
+  background-color: #4d839d;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#9fcadf), to(#4d839d));
+  /* Konqueror */
+
+  background-image: -moz-linear-gradient(#9fcadf, #4d839d);
+  /* FF 3.6+ */
+
+  background-image: -ms-linear-gradient(#9fcadf, #4d839d);
+  /* IE10 */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9fcadf), color-stop(100%, #4d839d));
+  /* Safari 4+, Chrome 2+ */
+
+  background-image: -webkit-linear-gradient(#9fcadf, #4d839d);
+  /* Safari 5.1+, Chrome 10+ */
+
+  background-image: -o-linear-gradient(#9fcadf, #4d839d);
+  /* Opera 11.10 */
+
+  background-image: -ms-linear-gradient(top, #9fcadf 0%, #4d839d 100%);
+  /* IE10+ */
+
+  background-image: linear-gradient(#9fcadf, #4d839d);
+  /* the standard */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9fcadf', endColorstr='#4d839d', GradientType=0);
+  /* IE6 & IE7 */
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#9fcadf', endColorstr='#4d839d', GradientType=0)";
+  /* IE8+ */
+
+  border-bottom: 0.5rem solid #6297b2;
 }
 #products h2 {
   margin-top: 0;
+  color: #fff;
 }
 #products .substance > ul,
 #products .meta ul,
@@ -933,6 +973,7 @@ footer:last-child:after {
   height: 100%;
   width: 100%;
   padding: 1rem;
+  color: #fff;
   border-radius: 0.5em;
   background: rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.4s ease;
@@ -1096,11 +1137,14 @@ footer:last-child:after {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 0.667rem;
-  background: rgba(0, 0, 0, 0.2) 0 100% no-repeat;
+  background: rgba(110, 174, 207, 0.5) 0 100% no-repeat;
+}
+#people li h3 {
+  color: rgba(255, 255, 255, 0.8);
 }
 #people li p {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #333;
 }
 #people li:first-child {
   background-image: url('../img/rob.png');
@@ -1135,6 +1179,9 @@ footer:last-child:after {
 #footer ul {
   margin: 0;
   list-style: none;
+}
+#footer h2 {
+  color: #fff;
 }
 #footer h2,
 #footer ul > li {
