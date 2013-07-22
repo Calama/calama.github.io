@@ -151,15 +151,15 @@ People
     pursing a doctorate in photovoltaic system design and optimization which is
     unique within the industry. He is published in major academic journals, and
     is an active member of the international PV modelling collaborative.
-
-*   ### Philip Schleihauf
-
-    Philip Schleihauf builds websites, administers servers and databases,
-    designs graphics, rides unicycles, and sometimes sleeps. Phil joined Calama
-    in 2013 to develop and launch [Frames](#frames
-    "Frames is an exciting new product being developed at Calama Consulting").
-
 """
+# *   ### Philip Schleihauf
+
+#     Philip Schleihauf builds websites, administers servers and databases,
+#     designs graphics, rides unicycles, and sometimes sleeps. Phil joined Calama
+#     in 2013 to develop and launch [Frames](#frames
+#     "Frames is an exciting new product being developed at Calama Consulting").
+
+# """
 
 
 content['footer'] = """
