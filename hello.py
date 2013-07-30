@@ -54,7 +54,7 @@ boxes = (
         description=Markup(markdown('''
 Calma consulting services pring the latest knowledge from industry and academia to bear on your PV project. We focus on:
 
- *  Resoursce evaluation campaingn design, and design and maintenance of custom data aquisition
+ *  Resoursce evaluation campaign design, and design and maintenance of custom data aquisition
  *  PV resource data evaluation and selection of appropriate metrological data
  *  PV system design and optimization
  *  PV system evaluation and performance monitoring
