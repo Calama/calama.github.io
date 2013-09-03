@@ -1,3 +1,4 @@
+cp GitHub_Intro.txt index.html
 cp * ../../../calama.github.io/PVLIB/
 cd  ../../../calama.github.io/PVLIB/
 git add *
