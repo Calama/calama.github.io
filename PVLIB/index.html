@@ -1,0 +1,161 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>GitHub_Intro</title></head><body><h1 id="introduction-to-github">Introduction to GitHub</h1>
+<p>This tutorial will provide an overveiw of the GitHub project repository, and will provide instructions on how to utilize this service to properly utilize the PV_LIB toolset</p>
+<p>To run through this tutorial will take approximately 30 minutes </p>
+<h1 id="why-github">Why Github?</h1>
+<p>GitHub is a web based hosting service that allows for collaborative development and maintenance of code. It provides the following features:</p>
+<pre><code>-A robust revision control system, allowing bug fixes and feature additions can be tracked and attributed (or in GitHub language "blamed") to the users which are responsible.
+
+-Tracking of the status of the repository, to ensure that your local copy is up to date with the latest version of PV_LIB
+-Ability to create a "fork" or parallel repository from PV_LIB, to allow local editing of the code. 
+-Pull requests to merge new features or major bug fixes back into the master branch of PV_LIB
+-Ability to revert to earlier versions of the code, to make sure there is continutity between simulations performed locally (on your computer)
+-In-line commenting of code through the online interface, for collaborative bug fixes
+</code></pre>
+<h1 id="using-github">Using GitHub</h1>
+<p>If you are interested in using GitHub to keep up to date with the latest releases of PV_LIB, and do not wish to modify the code for submitting bug fixes/feature additions read the <strong>Basic Usage</strong> section. If you are looking to modify the code of PV_LIB, and would like to track these changes and possibly merge them back into the master code, read the <strong>Advanced Usage</strong> section.</p>
+<h1 id="basic-usage">Basic usage</h1>
+<p>If you are using Windows or Mac, you have the option of using either the command line or a Graphical User Interface (GUI). These instructions will outline the use of the command line. Don't worry if you're not too comfortable yet with the command line, there is a minimal number of commands you will need to master.
+You will need to install a local version of Git. This will manage the files you have locally on your machine, to ensure they are up to date with the latest updates, and for advanced users will provide tools for contributing bug fixes and features back to the main repository.</p>
+<h2 id="register-on-github">Register on GitHub</h2>
+<p>You will need to register an online profile at <a href="http://www.github.com">GitHub</a> </p>
+<h2 id="installing-github">Installing GitHub</h2>
+<p>You will need to install GitHub locally on your machine (Instructions: <a href="https://help.github.com/articles/set-up-git#platform-windows">Windows</a>, <a href="https://help.github.com/articles/set-up-git#platform-mac">Mac</a>). For windows users, the git "bash" shell will be installed along with GitHub, and may be called simply git shell. For mac, git will be added automatically to the path of your bash shell. To open the shell, search for "terminal" using searchlight, and you can start entering git commands (any command which starts with git)</p>
+<h3 id="quick-tips-for-using-a-terminal">Quick tips for using a terminal</h3>
+<p>For those who haven't used a terminal much, these are some quick tips:</p>
+<ul>
+<li>Use Tab to auto-complete file names. It will search the directory and find a match for the filename/directory that you have started to type. Hit tab twice to see all optoins, if only one option is available it will automatically be populated</li>
+<li><em>pwd</em> shows the directory you are in </li>
+<li><em>ls</em> shows the contents of the directory</li>
+<li><em>cd</em> changes directories (try using this with tab completion). <em>cd ..</em> moves back one directory cd <em>../..</em> moves back two, etc. </li>
+</ul>
+<h3 id="create-a-fork">Create a Fork</h3>
+<p>Imagine that the development of PV_LIB is marked by a series of sequential updates. For example the code maintainers may fix a bug, then add a feature, continuing the linear progression of the code. The intent of a fork is to create a parallel branch of the code on your local machine. You can continually <em>pull</em> from the <em>upstream</em> master development line, to make sure that you are up to date with your parallel distribution. For basic users, this one way updating will be the only way that they interact with the code. </p>
+<p>To create a fork, log into your GitHub account online, and search for PVLIB, depending on the language you are interested in (Matlab or Python) you can enter the repository and click the fork icon in the top right corner. The forked repository will now exist in your online profile. You will </p>
+<h3 id="clone-your-fork-onto-the-local-machine">Clone your fork onto the local machine</h3>
+<p>Now that you have a copy of PV_LIB on the GitHub server, you want to clone this onto your computer
+Open a terminal, and navigate to the location you would like to place the repository. Github will create a folder names PVLIB_<em>syntax</em> when you clone the repository
+Enter the following code into the terminal:
+    git clone <em>address</em></p>
+<p>Where the address</p></body></html>
