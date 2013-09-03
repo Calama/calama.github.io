@@ -92,11 +92,7 @@ inside the git repository directory (you will need to navigate there inside a sh
 Make sure that the PVLIB directory is on your path, for either [MATLAB](http://www.mathworks.com/help/matlab/ref/path.html) or PYTHON ([Windows](http://scipher.wordpress.com/2010/05/10/setting-your-pythonpath-environment-variable-linuxunixosx/) or [Mac](http://stackoverflow.com/questions/3701646/how-to-add-to-the-pythonpath-in-windows-7)). Also, Make sure that you have deleted any other versions of PVLIB on ths system, to avoid possible path conflicts
 
 ### Learn more
-If you are interested in understanding Git more fully, the online [Git Tutorial]
-(http://try.github.io/levels/1/challenges/1)is highly reccomended. 
+If you are interested in understanding Git more fully, the online [Git Tutorial](http://try.github.io/levels/1/challenges/1)is highly reccomended. 
 
 
 
-
-[Forking]: ./Branched_dev.jpg
-[Sequential]: ./Linear_dev.jpg
