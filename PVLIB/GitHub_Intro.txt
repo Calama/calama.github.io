@@ -1,0 +1,102 @@
+Introduction to GitHub
+======================
+
+This tutorial will provide an overveiw of the GitHub project repository, and will provide instructions on how to utilize this service to properly utilize the PV_LIB toolset
+
+To run through this tutorial will take approximately 30 minutes 
+
+# Why Github?	
+
+GitHub is a web based hosting service that allows for collaborative development and maintenance of code. It provides the following features:
+
+*A robust revision control system, allowing bug fixes and feature additions can be tracked and attributed (or in GitHub language "blamed") to the users which are responsible.
+
+*Tracking of the status of the repository, to ensure that your local copy is up to date with the latest version of PV_LIB
+
+*Ability to create a "fork" or parallel repository from PV_LIB, to allow local editing of the code. 
+	
+*Pull requests to merge new features or major bug fixes back into the master branch of PV_LIB
+
+*Ability to revert to earlier versions of the code, to make sure there is continutity between simulations performed locally (on your computer)
+
+*In-line commenting of code through the online interface, for collaborative bug fixes∏
+
+Using GitHub
+============
+
+If you are interested in using GitHub to keep up to date with the latest releases of PV_LIB, and do not wish to modify the code for submitting bug fixes/feature additions read the **Basic Usage** section. If you are looking to modify the code of PV_LIB, and would like to track these changes and possibly merge them back into the master code, read the **Advanced Usage** section.
+
+#Basic usage
+If you are using Windows or Mac, you have the option of using either the command line or a Graphical User Interface (GUI). These instructions will outline the use of the command line. Don't worry if you're not too comfortable yet with the command line, there is a minimal number of commands you will need to master.
+You will need to install a local version of Git. This will manage the files you have locally on your machine, to ensure they are up to date with the latest updates, and for advanced users will provide tools for contributing bug fixes and features back to the main repository.
+
+## Register on GitHub
+You will need to register an online profile at [GitHub](http://www.github.com) 
+
+## Installing GitHub
+You will need to install GitHub locally on your machine (Instructions: [Windows](https://help.github.com/articles/set-up-git#platform-windows), [Mac](https://help.github.com/articles/set-up-git#platform-mac)). For windows users, the git "bash" shell will be installed along with GitHub, and may be called simply git shell. For mac, git will be added automatically to the path of your bash shell. To open the shell, search for "terminal" using searchlight, and you can start entering git commands (any command which starts with git)
+
+###	Quick tips for using a terminal 
+
+For those who haven't used a terminal much, these are some quick tips:
+
+* Use Tab to auto-complete file names. It will search the directory and find a match for the filename/directory that you have started to type. Hit tab twice to see all optoins, if only one option is available it will automatically be populated
+* *pwd* shows the directory you are in 
+* *ls* shows the contents of the directory
+* *cd* changes directories (try using this with tab completion). *cd ..* moves back one directory cd *../..* moves back two, etc. 
+
+To get a more full list of commands, you can go [here](http://files.fosswire.com/2007/08/fwunixref.pdf), or google "Unix cheat sheet"
+
+####Notes for windows users
+The git shell will work with linux or unix commands. Git is actually developed by the linux team, and so the git shell on windows runs like a mini version of linux on the machine. So, for example, to list files the command is *ls* not *dir* as it would be in a windows command prompt. 
+
+If you didn't understand this any of this, don't worry about it, just learn the commands in this tutorial! 
+
+
+### Create a Fork 
+Imagine that the development of a peice of software is marked by a series of sequential updates. For example the code maintainers may fix a bug locally, and upload to the server, then add a feature locally and upload, continuing the linear progression of the code. 
+![][Sequential]
+*An example of a sequential program development of GitHub*
+
+This method works well for code being developed for one user (and is is highly reccomended that you look into managing personal coding projects in this way, to maintain a robust versioning system for any project. ). 
+However, when multiple users are using a peice of code (as with PVLIB), there neccisarily will be seperate copies of the code located on each users machine. The issue here is to make sure that everyone stays up to date with the current release, while still maintaining backwards compatiblity for their projects. This is where git shines. 
+
+The intent of a fork is to create a parallel branch of the code on your local machine. You can continually *fetch* from the *upstream* master development line, to make sure that you are up to date with your parallel distribution. For basic users, this one way updating will be the only way that they interact with the git repository. The network graph below shows Sandia_labs creating two forks, making minor changes, and then merging them back on to the main branch, so at the end, all the versions are up-to-date. 
+![][Forking]
+
+NOTE: If you are interested in only staying up to date with PVLIB, *do not* modify the code locally on your machine. If you do want to modify the PVLIB code, it can easily be done, but be sure to read the advanced users section first. 
+
+To create a fork, log into your GitHub account online, and search for PVLIB, depending on the language you are interested in (Matlab or Python) you can enter the repository and click the fork icon in the top right corner. The forked repository will now exist in your online profile. 
+
+### Clone your fork onto the local machine
+Now that you have a copy of PV_LIB on the GitHub server, you want to clone this onto your computer
+Open a terminal, and navigate to the location you would like to place the repository. Github will create a folder names PVLIB_*syntax* when you clone the repository
+Enter the following code into the terminal:
+    
+    git clone *address*
+      
+
+Where the address can be found in the box labelled "HTTPS clone URL" along the right hand bar of the repository. 
+
+### Keep up to date
+For basic users, the only future git commands you will need to run is 
+
+    git fetch upstream
+
+    git merge upstream/master
+
+
+inside the git repository directory (you will need to navigate there inside a shell). This will fetch any new updates to any PVLIB file, and will merge them with your working copies
+
+### Set your path
+Make sure that the PVLIB directory is on your path, for either [MATLAB](http://www.mathworks.com/help/matlab/ref/path.html) or PYTHON ([Windows](http://scipher.wordpress.com/2010/05/10/setting-your-pythonpath-environment-variable-linuxunixosx/) or [Mac](http://stackoverflow.com/questions/3701646/how-to-add-to-the-pythonpath-in-windows-7)). Also, Make sure that you have deleted any other versions of PVLIB on ths system, to avoid possible path conflicts
+
+### Learn more
+If you are interested in understanding Git more fully, the online [Git Tutorial]
+(http://try.github.io/levels/1/challenges/1)is highly reccomended. 
+
+
+
+
+[Forking]: ./Branched_dev.jpg
+[Sequential]: ./Linear_dev.jpg
