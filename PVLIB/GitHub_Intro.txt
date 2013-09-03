@@ -9,17 +9,12 @@ To run through this tutorial will take approximately 30 minutes
 
 GitHub is a web based hosting service that allows for collaborative development and maintenance of code. It provides the following features:
 
-*A robust revision control system, allowing bug fixes and feature additions can be tracked and attributed (or in GitHub language "blamed") to the users which are responsible.
-
-*Tracking of the status of the repository, to ensure that your local copy is up to date with the latest version of PV_LIB
-
-*Ability to create a "fork" or parallel repository from PV_LIB, to allow local editing of the code. 
-	
-*Pull requests to merge new features or major bug fixes back into the master branch of PV_LIB
-
-*Ability to revert to earlier versions of the code, to make sure there is continutity between simulations performed locally (on your computer)
-
-*In-line commenting of code through the online interface, for collaborative bug fixes∏
+* A robust revision control system, allowing bug fixes and feature additions can be tracked and attributed (or in GitHub language "blamed") to the users which are responsible.
+* Tracking of the status of the repository, to ensure that your local copy is up to date with the latest version of PV_LIB
+* Ability to create a "fork" or parallel repository from PV_LIB, to allow local editing of the code. 
+* Pull requests to merge new features or major bug fixes back into the master branch of PV_LIB. 
+* Ability to revert to earlier versions of the code, to make sure there is continutity between simulations performed locally (on your computer)
+* In-line commenting of code through the online interface, for collaborative bug fixes.
 
 Using GitHub
 ============
@@ -92,8 +87,8 @@ inside the git repository directory (you will need to navigate there inside a sh
 Make sure that the PVLIB directory is on your path, for either [MATLAB](http://www.mathworks.com/help/matlab/ref/path.html) or PYTHON ([Windows](http://scipher.wordpress.com/2010/05/10/setting-your-pythonpath-environment-variable-linuxunixosx/) or [Mac](http://stackoverflow.com/questions/3701646/how-to-add-to-the-pythonpath-in-windows-7)). Also, Make sure that you have deleted any other versions of PVLIB on ths system, to avoid possible path conflicts
 
 ### Learn more
-If you are interested in understanding Git more fully, the online [Git Tutorial]
-(http://try.github.io/levels/1/challenges/1)is highly reccomended. 
+If you are interested in understanding Git more fully, the online [Git Tutorial](http://try.github.io/levels/1/challenges/1)is highly reccomended. 
 
-
+[Forking]: http://calamaconsulting.ca/PVLIB/Branched_dev.jpg
+[Sequential]: http://calamaconsulting.ca/PVLIB/Linear_dev.jpg
 
