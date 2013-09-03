@@ -50,13 +50,16 @@ If you didn't understand this any of this, don't worry about it, just learn the 
 
 ### Create a Fork 
 Imagine that the development of a peice of software is marked by a series of sequential updates. For example the code maintainers may fix a bug locally, and upload to the server, then add a feature locally and upload, continuing the linear progression of the code. 
+
 ![][Sequential]
+
 *An example of a sequential program development of GitHub*
 
 This method works well for code being developed for one user (and is is highly reccomended that you look into managing personal coding projects in this way, to maintain a robust versioning system for any project. ). 
 However, when multiple users are using a peice of code (as with PVLIB), there neccisarily will be seperate copies of the code located on each users machine. The issue here is to make sure that everyone stays up to date with the current release, while still maintaining backwards compatiblity for their projects. This is where git shines. 
 
 The intent of a fork is to create a parallel branch of the code on your local machine. You can continually *fetch* from the *upstream* master development line, to make sure that you are up to date with your parallel distribution. For basic users, this one way updating will be the only way that they interact with the git repository. The network graph below shows Sandia_labs creating two forks, making minor changes, and then merging them back on to the main branch, so at the end, all the versions are up-to-date. 
+
 ![][Forking]
 
 NOTE: If you are interested in only staying up to date with PVLIB, *do not* modify the code locally on your machine. If you do want to modify the PVLIB code, it can easily be done, but be sure to read the advanced users section first. 
