@@ -1,1 +1,5 @@
 cp * ../../../calama.github.io/PVLIB/
+cd  ../../../calama.github.io/PVLIB/
+git add *
+git commit -m 'auto update'
+git push 
