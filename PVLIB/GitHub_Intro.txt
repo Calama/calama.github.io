@@ -59,7 +59,9 @@ Imagine that the development of a peice of software is marked by a series of seq
 This method works well for code being developed for one user (and is is highly reccomended that you look into managing personal coding projects in this way, to maintain a robust versioning system for any project. ). 
 However, when multiple users are using a peice of code (as with PVLIB), there neccisarily will be seperate copies of the code located on each users machine. The issue here is to make sure that everyone stays up to date with the current release, while still maintaining backwards compatiblity for their projects. This is where git shines. 
 
-The intent of a fork is to create a parallel branch of the code on your local machine. You can continually *fetch* from the *upstream* master development line, to make sure that you are up to date with your parallel distribution. For basic users, this one way updating will be the only way that they interact with the git repository. The network graph below shows Sandia_labs creating two forks, making minor changes, and then merging them back on to the main branch, so at the end, all the versions are up-to-date. 
+The intent of a fork is to create a parallel branch of the code on your local machine. You can continually *fetch* from the *upstream* master development line, to make sure that you are up to date with your parallel distribution. For basic users, this one way updating will be the only way that they interact with the git repository.
+
+ The network graph below shows the same linear development path on the master repository. However, a user has created a forked copy of PVLIB after the first Bug fix. This copy remains the same on the users machine, even as the master chain continues to be modified. After a new package is added to PVLIB, the user decides to Fetch from the Upstream (master) branch, and all the new changes are merged into their forked copy. 
 
 ![][Forking]
 
