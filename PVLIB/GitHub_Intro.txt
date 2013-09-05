@@ -22,8 +22,9 @@ Using GitHub
 If you are interested in using GitHub to keep up to date with the latest releases of PV_LIB, and do not wish to modify the code for submitting bug fixes/feature additions read the **Basic Usage** section. If you are looking to modify the code of PV_LIB, and would like to track these changes and possibly merge them back into the master code, read the **Advanced Usage** section.
 
 #Basic usage
-If you are using Windows or Mac, you have the option of using either the command line or a Graphical User Interface (GUI). These instructions will outline the use of the command line. Don't worry if you're not too comfortable yet with the command line, there is a minimal number of commands you will need to master.
-You will need to install a local version of Git. This will manage the files you have locally on your machine, to ensure they are up to date with the latest updates, and for advanced users will provide tools for contributing bug fixes and features back to the main repository.
+If you are using Windows or Mac, you have the option of using either the command line or a Graphical User Interface (GUI). These instructions will outline the use of the command line. Don't worry if you're not too comfortable yet with the command line, there is a minimal number of commands you will need to master. If you do want to utilize the GUI application, it can be downloaded from the GitHub site, but is not reccomened.
+
+You will need to register with GitHub, and install a local version. This will manage the files you have locally on your machine, to ensure they are up to date with the latest updates, and for advanced users will provide tools for contributing bug fixes and features back to the main repository.
 
 ## Register on GitHub
 You will need to register an online profile at [GitHub](http://www.github.com) 
@@ -92,6 +93,6 @@ Make sure that the PVLIB directory is on your path, for either [MATLAB](http://w
 ### Learn more
 If you are interested in understanding Git more fully, the online [Git Tutorial](http://try.github.io/levels/1/challenges/1)is highly reccomended. 
 
-[Forking]: http://calamaconsulting.ca/PVLIB/Branched_dev.jpg
-[Sequential]: http://calamaconsulting.ca/PVLIB/Linear_dev.jpg
+[Forking]: http://calamaconsulting.ca/PVLIB/GitChainsforked.png
+[Sequential]: http://calamaconsulting.ca/PVLIB/GitChain.png
 
