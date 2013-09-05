@@ -158,13 +158,13 @@ body{font-size:16px;}
 <p>If you didn't understand this any of this, don't worry about it, just learn the commands in this tutorial! </p>
 <h3 id="create-a-fork">Create a Fork</h3>
 <p>Imagine that the development of a peice of software is marked by a series of sequential updates. For example the code maintainers may fix a bug locally, and upload to the server, then add a feature locally and upload, continuing the linear progression of the code. </p>
-<p><img alt="" src="./GitHub_Intro_files/GitChain.png"></p>
+<p><img alt="" src="http://calamaconsulting.ca/PVLIB/GitChain.png"></p>
 <p><em>An example of a sequential program development of GitHub</em></p>
 <p>This method works well for code being developed for one user (and is is highly reccomended that you look into managing personal coding projects in this way, to maintain a robust versioning system for any project. ). 
 However, when multiple users are using a peice of code (as with PVLIB), there neccisarily will be seperate copies of the code located on each users machine. The issue here is to make sure that everyone stays up to date with the current release, while still maintaining backwards compatiblity for their projects. This is where git shines. </p>
 <p>The intent of a fork is to create a parallel branch of the code on your local machine. You can continually <em>fetch</em> from the <em>upstream</em> master development line, to make sure that you are up to date with your parallel distribution. For basic users, this one way updating will be the only way that they interact with the git repository.</p>
 <p>The network graph below shows the same linear development path on the master repository. However, a user has created a forked copy of PVLIB after the first Bug fix. This copy remains the same on the users machine, even as the master chain continues to be modified. After a new package is added to PVLIB, the user decides to Fetch from the Upstream (master) branch, and all the new changes are merged into their forked copy. </p>
-<p><img alt="" src="./GitHub_Intro_files/GitChainsforked.png"></p>
+<p><img alt="" src="http://calamaconsulting.ca/PVLIB/GitChainsforked.png"></p>
 <p>NOTE: If you are interested in only staying up to date with PVLIB, <em>do not</em> modify the code locally on your machine. If you do want to modify the PVLIB code, it can easily be done, but be sure to read the advanced users section first. </p>
 <p>To create a fork, log into your GitHub account online, and search for PVLIB, depending on the language you are interested in (Matlab or Python) you can enter the repository and click the fork icon in the top right corner. The forked repository will now exist in your online profile. </p>
 <h3 id="clone-your-fork-onto-the-local-machine">Clone your fork onto the local machine</h3>
