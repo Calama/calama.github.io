@@ -80,6 +80,12 @@ Enter the following code into the terminal:
 Where the address can be found in the box labelled "HTTPS clone URL" along the right hand bar of the repository. 
 
 ### Keep up to date
+You need to tell your version of git hub where the upstream branch is (the official PVLIB release from sandia). To do this, enter the following commands:
+
+    git remote add upstream https://github.com/Sandia-Labs/PVLIB_Matlab.git
+
+This will define the sandia version of the library as the upstream version
+
 For basic users, the only future git commands you will need to run is 
 
     git fetch upstream
