@@ -1,69 +1,125 @@
-<h1 id="updating-pvlib">Updating PVLIB</h1>
+<h1>
+<a name="updating-pvlib" class="anchor" href="#updating-pvlib"><span class="octicon octicon-link"></span></a>Updating PVLIB</h1>
+
 <p>In this tutorial the fork-branch-pull method for updating PVLIB will be outlined. The basic steps are
 <em> Fork the main PVLIB repository and clone locally
 </em> Create a development branch
 <em> Create a pull request to merge your development code with the main repository
 </em> Sync and clean up your local repository</p>
-<h2 id="set-up-local-repository">Set up local repository</h2>
+
+<h2>
+<a name="set-up-local-repository" class="anchor" href="#set-up-local-repository"><span class="octicon octicon-link"></span></a>Set up local repository</h2>
+
 <p>Follow the tutorial to create a fork of the Sandia-Labs version of PVLIB, and clone this locally to your machine</p>
-<h2 id="create-a-branch">Create a branch</h2>
+
+<h2>
+<a name="create-a-branch" class="anchor" href="#create-a-branch"><span class="octicon octicon-link"></span></a>Create a branch</h2>
+
 <p>Any edits to the code should be performed on a "branch", which is a parallel version of the code which exists on your machine. Therefore main branch, "master", should always represent the master version of the code from Sandia-Labs. You can only make one pull request per branch, and so if you are fixing or adding multiple compoents, set up an individual branch for each one. </p>
+
 <p>To create a branch, type:</p>
+
 <pre><code>  git branch newbranchname
 </code></pre>
+
 <p>and to switch to this branch type:</p>
+
 <pre><code>   git checkout newbranchname
 </code></pre>
+
 <p>To check which branch you are on, type:</p>
+
 <pre><code>   git branch
 </code></pre>
+
 <p>you might get a readout that looks like this</p>
+
 <pre><code>    master
     devbranch1
   * devbranch2
 </code></pre>
+
 <p>which means you are currently on devbranch2. </p>
+
 <p>Before switching between branches, you will need to commit (see below) any changes you've made, which allows github to remember and store these changes. </p>
+
 <p>When you switch between branches, the local files on your computer will change to represent the code of a particular branch. NOTE: Some text editors will not automatically update the file shown in the editing window, and you may have to reload the file to see the changes. In some editors it is sufficient to minimize and maximize the page. </p>
-<h2 id="make-the-changes">Make the changes</h2>
+
+<h2>
+<a name="make-the-changes" class="anchor" href="#make-the-changes"><span class="octicon octicon-link"></span></a>Make the changes</h2>
+
 <p>Make any required changes to the files on your development branch. As you make changes to your files, you can track the changes by typing:</p>
+
 <pre><code> git status
 </code></pre>
+
 <p>Which will show the files which have been modified. For more information on exactly what has been changed, type:</p>
+
 <pre><code> git diff filename
 </code></pre>
+
 <p>And you will see a summary of the changes that you've made to the file (if you are on a UNIX system (linux or mac) you can quit the text editor by typing 'q')</p>
-<h2 id="add-and-commit">Add and commit</h2>
+
+<h2>
+<a name="add-and-commit" class="anchor" href="#add-and-commit"><span class="octicon octicon-link"></span></a>Add and commit</h2>
+
 <p>Once you have made significant changes, and ensured they are functioning, you can add and commit these changes. This will save a snapshot of the code that you can go back to later, and will allow you to sync these changes back to the online repository. To add a file or file(s) type:</p>
+
 <pre><code> git add filename
 </code></pre>
+
 <p>You can add multiple files to a commit, and to add all of them type</p>
+
 <pre><code>git add *
 </code></pre>
+
 <p>Next you need to commit thse changes and leave a message to summarize what is happening at this point in the code</p>
+
 <pre><code> git commit -m "update message in quotations"
 </code></pre>
+
 <p>the short update comment will allow you to understand the evolution of the code, and to revert back to previous versions if need be. </p>
-<h2 id="push-to-online">Push to online</h2>
+
+<h2>
+<a name="push-to-online" class="anchor" href="#push-to-online"><span class="octicon octicon-link"></span></a>Push to online</h2>
+
 <p>Once you have committed the changes, they need to be synced to the online repository. To do this, type</p>
+
 <pre><code>git push origin branchname
 </code></pre>
+
 <p>This will upload the branch to the github repository</p>
-<h2 id="submit-a-pull-request">Submit a pull request</h2>
+
+<h2>
+<a name="submit-a-pull-request" class="anchor" href="#submit-a-pull-request"><span class="octicon octicon-link"></span></a>Submit a pull request</h2>
+
 <p>If you want these changes to be merged with the main github repository, you will need to submit a pull request. Log into the online repository and navigate to the new development branch. Click on "pull request" and add comments about the nature of the changes. </p>
-<h2 id="admin-only-accept-the-pull-request">[admin only] accept the pull request</h2>
+
+<h2>
+<a name="admin-only-accept-the-pull-request" class="anchor" href="#admin-only-accept-the-pull-request"><span class="octicon octicon-link"></span></a>[admin only] accept the pull request</h2>
+
 <p>Pull requests can be incorperated into the main Sandia-Labs repository only by adminisrators. After a pull request has been submitted, navigate to the Sandia-Labs repository, and open the tab labeled pull requests. Here you can ask the originator of the request additional questions about the pull, and approve or cancel the change. If the change is approved, the reccomended changes will automatically be merged with the master repository.</p>
-<h2 id="keep-the-local-fork-up-to-date">Keep the local fork up-to date</h2>
+
+<h2>
+<a name="keep-the-local-fork-up-to-date" class="anchor" href="#keep-the-local-fork-up-to-date"><span class="octicon octicon-link"></span></a>Keep the local fork up-to date</h2>
+
 <p>Assuming your change has been accepted into the main Sandia-Labs repository (which we are calling the 'upstream' repository), you will want to update your master branch on the forked repository to match the main Sandia-Labs version. </p>
+
 <pre><code>git fetch upstream
 
 git merge upstream/master
 </code></pre>
-<h2 id="clean-up-your-branches">Clean up your branches</h2>
+
+<h2>
+<a name="clean-up-your-branches" class="anchor" href="#clean-up-your-branches"><span class="octicon octicon-link"></span></a>Clean up your branches</h2>
+
 <p>Now that your branch has been merged with the main repository, you can delete the branch from your machine. </p>
+
 <pre><code>git branch -d branchname
 </code></pre>
+
 <p>Will remove it. </p>
+
 <p>You're done. To recap what has happened:
 <em> created a development branch
 </em> made some changes, committed them and pushed them to online
