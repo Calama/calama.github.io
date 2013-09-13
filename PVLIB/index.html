@@ -1,71 +1,249 @@
-<h1 id="updating-pvlib">Updating PVLIB</h1>
-<p>In this tutorial the fork-branch-pull method for updating PVLIB will be outlined. The basic steps are
-<em> Fork the main PVLIB repository and clone locally
-</em> Create a development branch
-<em> Create a pull request to merge your development code with the main repository
-</em> Sync and clean up your local repository</p>
-<h2 id="set-up-local-repository">Set up local repository</h2>
-<p>Follow the tutorial to create a fork of the Sandia-Labs version of PVLIB, and clone this locally to your machine</p>
-<h2 id="create-a-branch">Create a branch</h2>
-<p>Any edits to the code should be performed on a "branch", which is a parallel version of the code which exists on your machine. Therefore main branch, "master", should always represent the master version of the code from Sandia-Labs. You can only make one pull request per branch, and so if you are fixing or adding multiple compoents, set up an individual branch for each one. </p>
-<p>To create a branch, type:</p>
-<pre><code>  git branch newbranchname
+<!DOCTYPE html>
+<!-- saved from url=(0073)file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>GitHub_Intro</title></head><body><h1>
+<a name="introduction-to-github" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#introduction-to-github"><span class="octicon octicon-link"></span></a>Introduction to GitHub</h1>
+
+<p>This tutorial will provide an overveiw of the GitHub project repository, and will provide instructions on how to utilize this service to properly utilize the PV_LIB toolset</p>
+
+<p>To run through this tutorial will take approximately 30 minutes </p>
+
+<h1>
+<a name="why-github" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#why-github"><span class="octicon octicon-link"></span></a>Why Github?</h1>
+
+<p>GitHub is a web based hosting service that allows for collaborative development and maintenance of code. It provides the following features:</p>
+
+<ul>
+<li>A robust revision control system, allowing bug fixes and feature additions can be tracked and attributed (or in GitHub language "blamed") to the users which are responsible.</li>
+<li>Tracking of the status of the repository, to ensure that your local copy is up to date with the latest version of PV_LIB</li>
+<li>Ability to create a "fork" or parallel repository from PV_LIB, to allow local editing of the code. </li>
+<li>Pull requests to merge new features or major bug fixes back into the master branch of PV_LIB. </li>
+<li>Ability to revert to earlier versions of the code, to make sure there is continutity between simulations performed locally (on your computer)</li>
+<li>In-line commenting of code through the online interface, for collaborative bug fixes.</li>
+</ul><h1>
+<a name="using-github" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#using-github"><span class="octicon octicon-link"></span></a>Using GitHub</h1>
+
+<p>If you are interested in using GitHub to keep up to date with the latest releases of PV_LIB, and do not wish to modify the code for submitting bug fixes/feature additions read the <strong>Basic Usage</strong> section. If you are looking to modify the code of PV_LIB, and would like to track these changes and possibly merge them back into the master code, read the <strong>Advanced Usage</strong> section.</p>
+
+<h1>
+<a name="basic-usage" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#basic-usage"><span class="octicon octicon-link"></span></a>Basic usage</h1>
+
+<p>If you are using Windows or Mac, you have the option of using either the command line or a Graphical User Interface (GUI). These instructions will outline the use of the command line. Don't worry if you're not too comfortable yet with the command line, there is a minimal number of commands you will need to master. If you do want to utilize the GUI application, it can be downloaded from the GitHub site, but is not reccomened.</p>
+
+<p>You will need to register with GitHub, and install a local version. This will manage the files you have locally on your machine, to ensure they are up to date with the latest updates, and for advanced users will provide tools for contributing bug fixes and features back to the main repository.</p>
+
+<h2>
+<a name="register-on-github" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#register-on-github"><span class="octicon octicon-link"></span></a>Register on GitHub</h2>
+
+<p>You will need to register an online profile at <a href="http://www.github.com/">GitHub</a> </p>
+
+<h2>
+<a name="installing-github" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#installing-github"><span class="octicon octicon-link"></span></a>Installing GitHub</h2>
+
+<p>You will need to install GitHub locally on your machine (Instructions: <a href="https://help.github.com/articles/set-up-git#platform-windows">Windows</a>, <a href="https://help.github.com/articles/set-up-git#platform-mac">Mac</a>). For windows users, the git "bash" shell will be installed along with GitHub, and may be called simply git shell. For mac, git will be added automatically to the path of your bash shell. To open the shell, search for "terminal" using searchlight, and you can start entering git commands (any command which starts with git)</p>
+
+<h3>
+<a name="quick-tips-for-using-a-terminal" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#quick-tips-for-using-a-terminal"><span class="octicon octicon-link"></span></a>Quick tips for using a terminal</h3>
+
+<p>For those who haven't used a terminal much, these are some quick tips:</p>
+
+<ul>
+<li>Use Tab to auto-complete file names. It will search the directory and find a match for the filename/directory that you have started to type. Hit tab twice to see all optoins, if only one option is available it will automatically be populated</li>
+<li>
+<em>pwd</em> shows the directory you are in </li>
+<li>
+<em>ls</em> shows the contents of the directory</li>
+<li>
+<em>cd</em> changes directories (try using this with tab completion). <em>cd ..</em> moves back one directory cd <em>../..</em> moves back two, etc. </li>
+</ul><p>To get a more full list of commands, you can go <a href="http://files.fosswire.com/2007/08/fwunixref.pdf">here</a>, or google "Unix cheat sheet"</p>
+
+<h4>
+<a name="notes-for-windows-users" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#notes-for-windows-users"><span class="octicon octicon-link"></span></a>Notes for windows users</h4>
+
+<p>The git shell will work with linux or unix commands. Git is actually developed by the linux team, and so the git shell on windows runs like a mini version of linux on the machine. So, for example, to list files the command is <em>ls</em> not <em>dir</em> as it would be in a windows command prompt. </p>
+
+<p>If you didn't understand this any of this, don't worry about it, just learn the commands in this tutorial! </p>
+
+<h3>
+<a name="create-a-fork" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#create-a-fork"><span class="octicon octicon-link"></span></a>Create a Fork</h3>
+
+<p>Imagine that the development of a peice of software is marked by a series of sequential updates. For example the code maintainers may fix a bug locally, and upload to the server, then add a feature locally and upload, continuing the linear progression of the code. </p>
+
+<p><a href="./GitHub_Intro_files/687474703a2f2f63616c616d61636f6e73756c74696e672e63612f50564c49422f476974436861696e2e706e67" target="_blank"><img src="./GitHub_Intro_files/687474703a2f2f63616c616d61636f6e73756c74696e672e63612f50564c49422f476974436861696e2e706e67" alt="" style="max-width:100%;"></a></p>
+
+<p><em>An example of a sequential program development of GitHub</em></p>
+
+<p>This method works well for code being developed for one user (and is is highly reccomended that you look into managing personal coding projects in this way, to maintain a robust versioning system for any project. ). 
+However, when multiple users are using a peice of code (as with PVLIB), there neccisarily will be seperate copies of the code located on each users machine. The issue here is to make sure that everyone stays up to date with the current release, while still maintaining backwards compatiblity for their projects. This is where git shines. </p>
+
+<p>The intent of a fork is to create a parallel branch of the code on your local machine. You can continually <em>fetch</em> from the <em>upstream</em> master development line, to make sure that you are up to date with your parallel distribution. For basic users, this one way updating will be the only way that they interact with the git repository.</p>
+
+<p>The network graph below shows the same linear development path on the master repository. However, a user has created a forked copy of PVLIB after the first Bug fix. This copy remains the same on the users machine, even as the master chain continues to be modified. After a new package is added to PVLIB, the user decides to Fetch from the Upstream (master) branch, and all the new changes are merged into their forked copy. </p>
+
+<p><a href="./GitHub_Intro_files/687474703a2f2f63616c616d61636f6e73756c74696e672e63612f50564c49422f476974436861696e73666f726b65642e706e67" target="_blank"><img src="./GitHub_Intro_files/687474703a2f2f63616c616d61636f6e73756c74696e672e63612f50564c49422f476974436861696e73666f726b65642e706e67" alt="" style="max-width:100%;"></a></p>
+
+<p>NOTE: If you are interested in only staying up to date with PVLIB, <em>do not</em> modify the code locally on your machine. If you do want to modify the PVLIB code, it can easily be done, but be sure to read the advanced users section first. </p>
+
+<p>To create a fork, log into your GitHub account online, and search for PVLIB, depending on the language you are interested in (Matlab or Python) you can enter the repository and click the fork icon in the top right corner. The forked repository will now exist in your online profile. </p>
+
+<h3>
+<a name="clone-your-fork-onto-the-local-machine" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#clone-your-fork-onto-the-local-machine"><span class="octicon octicon-link"></span></a>Clone your fork onto the local machine</h3>
+
+<p>Now that you have a copy of PV_LIB on the GitHub server, you want to clone this onto your computer
+Open a terminal, and navigate to the location you would like to place the repository. Github will create a folder names PVLIB_*syntax* when you clone the repository
+Enter the following code into the terminal:</p>
+
+<pre><code>git clone *address*
 </code></pre>
-<p>and to switch to this branch type:</p>
-<pre><code>   git checkout newbranchname
+
+<p>Where the address can be found in the box labelled "HTTPS clone URL" along the right hand bar of the repository. </p>
+
+<h3>
+<a name="keep-up-to-date" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#keep-up-to-date"><span class="octicon octicon-link"></span></a>Keep up to date</h3>
+
+<p>You need to tell your version of git hub where the upstream branch is (the official PVLIB release from sandia). To do this, enter the following commands:</p>
+
+<pre><code>git remote add upstream https://github.com/Sandia-Labs/PVLIB_Matlab.git
 </code></pre>
-<p>To check which branch you are on, type:</p>
-<pre><code>   git branch
-</code></pre>
-<p>you might get a readout that looks like this</p>
-<pre><code>    master
-    devbranch1
-  * devbranch2
-</code></pre>
-<p>which means you are currently on devbranch2. </p>
-<p>Before switching between branches, you will need to commit (see below) any changes you've made, which allows github to remember and store these changes. </p>
-<p>When you switch between branches, the local files on your computer will change to represent the code of a particular branch. NOTE: Some text editors will not automatically update the file shown in the editing window, and you may have to reload the file to see the changes. In some editors it is sufficient to minimize and maximize the page. </p>
-<h2 id="make-the-changes">Make the changes</h2>
-<p>Make any required changes to the files on your development branch. As you make changes to your files, you can track the changes by typing:</p>
-<pre><code> git status
-</code></pre>
-<p>Which will show the files which have been modified. For more information on exactly what has been changed, type:</p>
-<pre><code> git diff filename
-</code></pre>
-<p>And you will see a summary of the changes that you've made to the file (if you are on a UNIX system (linux or mac) you can quit the text editor by typing 'q')</p>
-<h2 id="add-and-commit">Add and commit</h2>
-<p>Once you have made significant changes, and ensured they are functioning, you can add and commit these changes. This will save a snapshot of the code that you can go back to later, and will allow you to sync these changes back to the online repository. To add a file or file(s) type:</p>
-<pre><code> git add filename
-</code></pre>
-<p>You can add multiple files to a commit, and to add all of them type</p>
-<pre><code>git add *
-</code></pre>
-<p>Next you need to commit thse changes and leave a message to summarize what is happening at this point in the code</p>
-<pre><code> git commit -m "update message in quotations"
-</code></pre>
-<p>the short update comment will allow you to understand the evolution of the code, and to revert back to previous versions if need be. </p>
-<h2 id="push-to-online">Push to online</h2>
-<p>Once you have committed the changes, they need to be synced to the online repository. To do this, type</p>
-<pre><code>git push origin branchname
-</code></pre>
-<p>This will upload the branch to the github repository</p>
-<h2 id="submit-a-pull-request">Submit a pull request</h2>
-<p>If you want these changes to be merged with the main github repository, you will need to submit a pull request. Log into the online repository and navigate to the new development branch. Click on "pull request" and add comments about the nature of the changes. </p>
-<h2 id="admin-only-accept-the-pull-request">[admin only] accept the pull request</h2>
-<p>Pull requests can be incorperated into the main Sandia-Labs repository only by adminisrators. After a pull request has been submitted, navigate to the Sandia-Labs repository, and open the tab labeled pull requests. Here you can ask the originator of the request additional questions about the pull, and approve or cancel the change. If the change is approved, the reccomended changes will automatically be merged with the master repository.</p>
-<h2 id="keep-the-local-fork-up-to-date">Keep the local fork up-to date</h2>
-<p>Assuming your change has been accepted into the main Sandia-Labs repository (which we are calling the 'upstream' repository), you will want to update your master branch on the forked repository to match the main Sandia-Labs version. </p>
+
+<p>This will define the sandia version of the library as the upstream version</p>
+
+<p>For basic users, the only future git commands you will need to run is </p>
+
 <pre><code>git fetch upstream
 
 git merge upstream/master
 </code></pre>
-<h2 id="clean-up-your-branches">Clean up your branches</h2>
-<p>Now that your branch has been merged with the main repository, you can delete the branch from your machine. </p>
-<pre><code>git branch -d branchname
-</code></pre>
-<p>Will remove it. </p>
-<p>You're done. To recap what has happened:
-<em> created a development branch
-</em> made some changes, committed them and pushed them to online
-<em> merged them to the main code base through a pull request
-</em> updated your version of the code to include your latest changes</p>
+
+<p>inside the git repository directory (you will need to navigate there inside a shell). This will fetch any new updates to any PVLIB file, and will merge them with your working copies</p>
+
+<h3>
+<a name="set-your-path" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#set-your-path"><span class="octicon octicon-link"></span></a>Set your path</h3>
+
+<p>Make sure that the PVLIB directory is on your path, for either <a href="http://www.mathworks.com/help/matlab/ref/path.html">MATLAB</a> or PYTHON (<a href="http://scipher.wordpress.com/2010/05/10/setting-your-pythonpath-environment-variable-linuxunixosx/">Windows</a> or <a href="http://stackoverflow.com/questions/3701646/how-to-add-to-the-pythonpath-in-windows-7">Mac</a>). Also, Make sure that you have deleted any other versions of PVLIB on ths system, to avoid possible path conflicts</p>
+
+<h3>
+<a name="learn-more" class="anchor" href="file://localhost/var/folders/5l/7_fyr5gs62jgy312dwt67vmr0000gn/T/247.html#learn-more"><span class="octicon octicon-link"></span></a>Learn more</h3>
+
+<p>If you are interested in understanding Git more fully, the online <a href="http://try.github.io/levels/1/challenges/1">Git Tutorial</a>is highly reccomended. </p></body></html>

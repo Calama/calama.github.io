@@ -1,7 +1,6 @@
 cp GitHub_Intro.html index.html
 cp Updating_PVLIB.html Update/index.html
-cp * ../../../calama.github.io/PVLIB/
-cp Update/* ../../../calama.github.io/PVLIB/
+cp -r * ../../../calama.github.io/PVLIB/
 cd  ../../../calama.github.io/PVLIB/
 git add *
 git commit -m 'auto update'
