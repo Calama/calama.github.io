@@ -1,0 +1,109 @@
+Updating PVLIB
+==============
+
+In this tutorial the fork-branch-pull method for updating PVLIB will be outlined. The basic steps are
+* Fork the main PVLIB repository and clone locally
+* Create a development branch
+* Create a pull request to merge your development code with the main repository
+* Sync and clean up your local repository
+
+## Set up local repository
+
+Follow the tutorial to create a fork of the Sandia-Labs version of PVLIB, and clone this locally to your machine
+
+## Create a branch
+
+Any edits to the code should be performed on a "branch", which is a parallel version of the code which exists on your machine. Therefore main branch, "master", should always represent the master version of the code from Sandia-Labs. You can only make one pull request per branch, and so if you are fixing or adding multiple compoents, set up an individual branch for each one. 
+
+To create a branch, type:
+
+      git branch newbranchname
+
+and to switch to this branch type:
+
+       git checkout newbranchname
+
+To check which branch you are on, type:
+
+       git branch
+
+you might get a readout that looks like this
+
+        master
+        devbranch1
+      * devbranch2
+
+which means you are currently on devbranch2. 
+
+Before switching between branches, you will need to commit (see below) any changes you've made, which allows github to remember and store these changes. 
+
+When you switch between branches, the local files on your computer will change to represent the code of a particular branch. NOTE: Some text editors will not automatically update the file shown in the editing window, and you may have to reload the file to see the changes. In some editors it is sufficient to minimize and maximize the page. 
+
+## Make the changes
+
+Make any required changes to the files on your development branch. As you make changes to your files, you can track the changes by typing:
+
+     git status
+
+Which will show the files which have been modified. For more information on exactly what has been changed, type:
+
+     git diff filename
+
+And you will see a summary of the changes that you've made to the file (if you are on a UNIX system (linux or mac) you can quit the text editor by typing 'q')
+
+## Add and commit
+
+Once you have made significant changes, and ensured they are functioning, you can add and commit these changes. This will save a snapshot of the code that you can go back to later, and will allow you to sync these changes back to the online repository. To add a file or file(s) type:
+
+     git add filename
+
+You can add multiple files to a commit, and to add all of them type
+
+    git add *
+
+Next you need to commit thse changes and leave a message to summarize what is happening at this point in the code
+
+     git commit -m "update message in quotations"
+
+the short update comment will allow you to understand the evolution of the code, and to revert back to previous versions if need be. 
+
+
+## Push to online
+
+Once you have committed the changes, they need to be synced to the online repository. To do this, type
+
+    git push origin branchname
+
+This will upload the branch to the github repository
+
+## Submit a pull request
+
+If you want these changes to be merged with the main github repository, you will need to submit a pull request. Log into the online repository and navigate to the new development branch. Click on "pull request" and add comments about the nature of the changes. 
+
+## [admin only] accept the pull request
+
+Pull requests can be incorperated into the main Sandia-Labs repository only by adminisrators. After a pull request has been submitted, navigate to the Sandia-Labs repository, and open the tab labeled pull requests. Here you can ask the originator of the request additional questions about the pull, and approve or cancel the change. If the change is approved, the reccomended changes will automatically be merged with the master repository.
+
+## Keep the local fork up-to date
+
+Assuming your change has been accepted into the main Sandia-Labs repository (which we are calling the 'upstream' repository), you will want to update your master branch on the forked repository to match the main Sandia-Labs version. 
+
+    git fetch upstream
+
+    git merge upstream/master
+
+## Clean up your branches
+
+Now that your branch has been merged with the main repository, you can delete the branch from your machine. 
+
+    git branch -d branchname
+
+Will remove it. 
+
+
+You're done. To recap what has happened:
+* created a development branch
+* made some changes, committed them and pushed them to online
+* merged them to the main code base through a pull request
+* updated your version of the code to include your latest changes
+

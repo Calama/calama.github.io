@@ -88,9 +88,6 @@ This will define the sandia version of the library as the upstream version
 
 For basic users, the only future git commands you will need to run is 
 
-    git fetch upstream
-
-    git merge upstream/master
 
 
 inside the git repository directory (you will need to navigate there inside a shell). This will fetch any new updates to any PVLIB file, and will merge them with your working copies
