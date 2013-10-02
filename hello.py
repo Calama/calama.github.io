@@ -108,7 +108,7 @@ researches = (
         authors='R. W. Andrews and J. M. Pearce',
         date=date(2012, 7, 1),
         id='snowfall-prediction',
-        download=dl('Snow Prediction full.pdf'),
+        download=dl('Snow_Prediction_full.pdf'),
     ),
     dict(
         title='The effect of spectral albedo on amorphous silicon and crystalline silicon solar photovoltaic device performance',
